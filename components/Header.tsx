@@ -14,7 +14,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-center pt-5 xl:pt-10 px-4">
+    <header className="absolute inset-x-0 top-0 z-50 flex justify-center pt-5 xl:pt-10 px-4">
       <div
         className={[
           "w-full max-w-5xl h-16 rounded-full px-5 sm:px-6",

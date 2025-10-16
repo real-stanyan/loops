@@ -1,37 +1,42 @@
-import Plasma from "@/components/Plasma";
-import TextType from "@/components/TextType";
+// app/page.tsx
+
 import Header from "@/components/Header";
+import GradualBlur from "@/components/GradualBlur";
+import Hero from "@/components/Hero";
+import BusinessCard from "@/components/BusinessCard";
+import ContactUs from "@/components/ContactUs";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
+    <main className="relative min-h-[100svh] overflow-x-hidden">
       <Header />
+      <div>
+        {/* HERO */}
+        <Hero />
 
-      <Plasma
-        color="#ff6b35"
-        speed={0.6}
-        direction="forward"
-        scale={1.1}
-        opacity={0.8}
-        mouseInteractive={true}
-      />
+        {/* BusinessCard */}
+        <BusinessCard />
 
-      <TextType
-        text={[
-          "GRAPHIC/WEB DESIGN AND BUILDING",
-          "CONTENT CREATION",
-          "SOCIAL MEDIA MANAGEMENT",
-          "DIGITAL MARKETING",
-        ]}
-        typingSpeed={75}
-        pauseDuration={1500}
-        showCursor={true}
-        cursorCharacter="|"
-        className={`
-          fixed top-[50vh] inset-0 z-[60] grid place-items-center text-center
-           pointer-events-none text-4xl md:text-5xl xl:text-6xl font-mono font-black
-          `}
-      />
-    </div>
+        {/* projects */}
+        <Projects />
+
+        {/* <ContactUs /> */}
+      </div>
+
+      {/* 全局底部渐隐 */}
+      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[80]">
+        <GradualBlur
+          target="parent"
+          position="bottom"
+          height="6rem"
+          strength={2}
+          divCount={5}
+          curve="bezier"
+          exponential
+          opacity={1}
+        />
+      </div>
+    </main>
   );
 }

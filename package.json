@@ -9,10 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-separator": "^1.1.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gsap": "^3.13.0",
+    "lenis": "^1.3.11",
     "lucide-react": "^0.545.0",
+    "mathjs": "^15.0.0",
     "next": "15.5.5",
     "ogl": "^1.0.11",
     "react": "19.1.0",
