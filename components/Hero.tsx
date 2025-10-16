@@ -8,7 +8,7 @@ import { useBreakpoint } from "@/utils/BreakpointBadge";
 const Hero = () => {
   const bp = useBreakpoint();
   const SCALE: Record<string, number> = {
-    base: 1.0,
+    base: 0.5,
     sm: 0.5,
     md: 0.7,
     lg: 1,
