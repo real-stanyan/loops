@@ -25,7 +25,7 @@ export default function Home() {
       </div>
 
       {/* 全局底部渐隐 */}
-      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[80]">
+      {/* <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[80]">
         <GradualBlur
           target="parent"
           position="bottom"
@@ -36,7 +36,7 @@ export default function Home() {
           exponential
           opacity={1}
         />
-      </div>
+      </div> */}
     </main>
   );
 }
