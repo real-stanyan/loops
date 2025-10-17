@@ -12,31 +12,107 @@ import {
   FieldTitle,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { Phone, Mail } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 const ContactUs = () => {
   return (
-    <div className="flex px-8 py-20">
-      <div className="flex-1"></div>
-      <div className="flex-1 p-4 bg-[var(--foreground)] rounded-xl">
+    <div
+      className={`
+        flex flex-col md:flex-row justify-between items-center 
+        px-6 xl:px-30 py-20 gap-8
+    `}
+    >
+      {/* Contact Left */}
+      <div className="flex-1 flex flex-col items-center xl:items-center gap-8">
+        <div className="flex flex-col items-center xl:items-center gap-4">
+          <h1 className="text-[#ff6b35] text-4xl font-mono font-black">
+            Get in Touch
+          </h1>
+          <p className="font-mono text-lg font-normal text-center xl:text-left">
+            We look forward to connecting with you and discussing how we can
+            help your brand thrive with tailored marketing strategies.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-6">
+          {/* Phone */}
+          <div className="flex justify-start items-center gap-10">
+            <div className="bg-[#ff6b35] p-2 rounded-full">
+              <Phone size={25} />
+            </div>
+            <h1 className="font-mono font-semibold text-xl">0405155473</h1>
+          </div>
+          {/* Mail */}
+          <div className="flex justify-start items-center gap-10">
+            <div className="bg-[#ff6b35] p-2 rounded-full">
+              <Mail size={25} />
+            </div>
+            <h1 className="font-mono font-semibold text-xl">info@loops.com</h1>
+          </div>
+        </div>
+      </div>
+      {/* Contact Right */}
+      <div
+        className={`
+      flex-1 p-6 md:p-8 bg-[var(--foreground)] text-[var(--background)] rounded-xl w-full
+        `}
+      >
         <FieldSet>
-          <FieldLegend>Profile</FieldLegend>
-          <FieldDescription>
-            This appears on invoices and emails.
+          <FieldLegend className="text-center !text-3xl font-black">
+            Get a Free Quote
+          </FieldLegend>
+          <FieldDescription className="text-center text-xl">
+            We will be available to call 24/7
           </FieldDescription>
           <FieldGroup>
+            {/* Name */}
             <Field>
-              <FieldLabel htmlFor="name">Full name</FieldLabel>
-              <Input id="name" autoComplete="off" placeholder="Evil Rabbit" />
-              <FieldDescription>
+              <FieldLabel htmlFor="name">Name</FieldLabel>
+              <Input
+                id="name"
+                autoComplete="off"
+                placeholder="Enter your name"
+              />
+              {/* <FieldDescription>
                 This appears on invoices and emails.
-              </FieldDescription>
+              </FieldDescription> */}
             </Field>
+            {/* Email */}
             <Field>
+              <FieldLabel htmlFor="email">Email</FieldLabel>
+              <Input
+                id="email"
+                autoComplete="on"
+                placeholder="Enter your email address"
+              />
+            </Field>
+            {/* Business Name */}
+            <Field>
+              <FieldLabel htmlFor="businessName">Business Name</FieldLabel>
+              <Input
+                id="businessName"
+                autoComplete="off"
+                placeholder="Enter your business name"
+              />
+            </Field>
+            {/* Message */}
+            <Field>
+              <FieldLabel htmlFor="message">Message</FieldLabel>
+              <Textarea
+                id="message"
+                autoComplete="off"
+                placeholder="Enter your message"
+                className="w-full h-[200px]"
+              />
+            </Field>
+            {/* <Field>
               <FieldLabel htmlFor="username">Username</FieldLabel>
               <Input id="username" autoComplete="off" aria-invalid />
               <FieldError>Choose another username.</FieldError>
-            </Field>
+            </Field> */}
           </FieldGroup>
+          <Button variant="default">Submit</Button>
         </FieldSet>
       </div>
     </div>
