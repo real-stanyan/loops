@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SpotlightCard from "@/components/SpotlightCard";
 import { useBreakpoint } from "@/utils/BreakpointBadge";
 import {
@@ -10,26 +10,33 @@ import {
   Rocket,
 } from "lucide-react";
 
+const DEFAULT_SIZE = 30; // SSR-safe
+
+const SIZE: Record<string, number> = {
+  base: 30,
+  sm: 20,
+  md: 30,
+  lg: 30,
+  xl: 40,
+};
+
 const BusinessCard = () => {
   const bp = useBreakpoint();
-  const SIZE: Record<string, number> = {
-    base: 30,
-    sm: 20,
-    md: 30,
-    lg: 30,
-    xl: 40,
-  };
+
+  // 保证首屏(SSR/水合)一致，挂载后再更新
+  const [iconSize, setIconSize] = useState<number>(DEFAULT_SIZE);
+  useEffect(() => {
+    setIconSize(SIZE[bp] ?? DEFAULT_SIZE);
+  }, [bp]);
 
   return (
     <div className="grid grid-cols-2 xl:grid-cols-4 px-4 xl:px-8 gap-4 -translate-y-10">
       {/* GRAPHIC/WEB DESIGN AND BUILDING */}
       <SpotlightCard
-        className={`
-              custom-spotlight-card flex flex-col gap-4
-              `}
+        className="custom-spotlight-card flex flex-col gap-4"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
-        <CodeXml size={SIZE[bp] ?? 30} />
+        <CodeXml size={iconSize} />
         <h1 className="font-mono font-black text-lg xl:text-2xl tracking-wide">
           GRAPHIC/WEB DESIGN AND BUILDING
         </h1>
@@ -40,14 +47,13 @@ const BusinessCard = () => {
           presence online.
         </p>
       </SpotlightCard>
+
       {/* CONTENT CREATION */}
       <SpotlightCard
-        className={`
-              custom-spotlight-card flex flex-col gap-4
-              `}
+        className="custom-spotlight-card flex flex-col gap-4"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
-        <TextAlignStart size={SIZE[bp] ?? 30} />
+        <TextAlignStart size={iconSize} />
         <h1 className="font-mono font-black text-lg xl:text-2xl tracking-wide">
           CONTENT CREATION
         </h1>
@@ -58,14 +64,13 @@ const BusinessCard = () => {
           attention and communicate your message effectively.
         </p>
       </SpotlightCard>
+
       {/* SOCIAL MEDIA MANAGEMENT */}
       <SpotlightCard
-        className={`
-              custom-spotlight-card flex flex-col gap-4
-              `}
+        className="custom-spotlight-card flex flex-col gap-4"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
-        <CircleFadingPlus size={SIZE[bp] ?? 30} />
+        <CircleFadingPlus size={iconSize} />
         <h1 className="font-mono font-black text-lg xl:text-2xl tracking-wide">
           SOCIAL MEDIA MANAGEMENT
         </h1>
@@ -76,14 +81,13 @@ const BusinessCard = () => {
           platforms.
         </p>
       </SpotlightCard>
+
       {/* DIGITAL MARKETING */}
       <SpotlightCard
-        className={`
-              custom-spotlight-card flex flex-col gap-4
-              `}
+        className="custom-spotlight-card flex flex-col gap-4"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
-        <Rocket size={SIZE[bp] ?? 30} />
+        <Rocket size={iconSize} />
         <h1 className="font-mono font-black text-lg xl:text-2xl tracking-wide">
           DIGITAL MARKETING
         </h1>

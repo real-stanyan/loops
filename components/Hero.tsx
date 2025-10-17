@@ -27,7 +27,7 @@ const Hero = () => {
         direction="forward"
         scale={SCALE[bp] ?? 1.0}
         opacity={0.8}
-        mouseInteractive
+        mouseInteractive={false}
       />
 
       <TextType
