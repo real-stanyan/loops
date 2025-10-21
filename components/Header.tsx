@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 import { Infinity } from "lucide-react";
+import Link from "next/link";
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -28,8 +30,25 @@ const Header: React.FC = () => {
         ].join(" ")}
       >
         <div className="flex items-center gap-3">
-          <Infinity />
-          <span className="font-semibold text-white/90">loops</span>
+          <Link
+            href="/"
+            aria-label="loops home"
+            className="group relative h-10 w-10 sm:h-12 sm:w-12 overflow-hidden"
+          >
+            <Image
+              src="/logo.webp"
+              alt="loops logo"
+              fill
+              priority
+              sizes="(min-width: 1280px) 96px, 80px"
+              className="object-contain p-0.5 select-none"
+              draggable={false}
+            />
+          </Link>
+
+          <span className="font-mono font-semibold text-white/90">
+            LOOPS DESIGN STUDIO
+          </span>
         </div>
 
         <nav className="flex items-center gap-6 text-sm">

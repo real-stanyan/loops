@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import { useState } from "react";
 import {
   Field,
   FieldContent,
@@ -15,8 +17,46 @@ import { Input } from "@/components/ui/input";
 import { Phone, Mail } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import emailjs from "emailjs-com";
 
 const ContactUs = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [businessName, setBusinessName] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async () => {
+    if (!name || !email || !businessName || !message) {
+      alert("Please fill out the form.");
+      return;
+    }
+
+    setLoading(true);
+
+    const templateParams = {
+      name,
+      email,
+      businessName,
+      message,
+    };
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+        templateParams,
+        process.env.NEXT_PUBLIC_USER_ID
+      );
+      alert("Booking email sent!");
+    } catch (error) {
+      alert("Failed to send booking email.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div
       className={`
@@ -48,7 +88,9 @@ const ContactUs = () => {
             <div className="bg-[#ff6b35] p-2 rounded-full">
               <Mail size={25} />
             </div>
-            <h1 className="font-mono font-semibold text-xl">info@loops.com</h1>
+            <h1 className="font-mono font-semibold text-xl">
+              info@loopsdesignstudio.co
+            </h1>
           </div>
         </div>
       </div>
@@ -73,6 +115,8 @@ const ContactUs = () => {
                 id="name"
                 autoComplete="off"
                 placeholder="Enter your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               {/* <FieldDescription>
                 This appears on invoices and emails.
@@ -85,6 +129,8 @@ const ContactUs = () => {
                 id="email"
                 autoComplete="on"
                 placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Field>
             {/* Business Name */}
@@ -94,6 +140,8 @@ const ContactUs = () => {
                 id="businessName"
                 autoComplete="off"
                 placeholder="Enter your business name"
+                value={businessName}
+                onChange={(e) => setBusinessName(e.target.value)}
               />
             </Field>
             {/* Message */}
@@ -104,6 +152,8 @@ const ContactUs = () => {
                 autoComplete="off"
                 placeholder="Enter your message"
                 className="w-full h-[200px]"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
             </Field>
             {/* <Field>
@@ -112,7 +162,9 @@ const ContactUs = () => {
               <FieldError>Choose another username.</FieldError>
             </Field> */}
           </FieldGroup>
-          <Button variant="default">Submit</Button>
+          <Button variant="default" onClick={handleSubmit}>
+            {loading ? "Submitting..." : "Submit"}
+          </Button>
         </FieldSet>
       </div>
     </div>

@@ -40,6 +40,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       {...rest}
       className={`absolute top-1/2 left-1/2 rounded-xl border-2 border-white/20 bg-black/70 overflow-hidden
         shadow-2xl [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden]
+        pointer-events-auto
         ${customClass ?? ""} ${rest.className ?? ""}`.trim()}
     />
   )
@@ -107,7 +108,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
   const config =
     easing === "elastic"
       ? {
-          ease: "elastic.out(0.6,0.9)",
+          ease: "elastic.out(0.6, 0.9)",
           durDrop: 2,
           durMove: 2,
           durReturn: 2,
@@ -139,8 +140,6 @@ const CardSwap: React.FC<CardSwapProps> = ({
   );
 
   const tlRef = useRef<gsap.core.Timeline | null>(null);
-
-  /** 修复：useRef 需要初始值 */
   const intervalRef = useRef<number | null>(null);
   const container = useRef<HTMLDivElement | null>(null);
 
@@ -236,8 +235,9 @@ const CardSwap: React.FC<CardSwapProps> = ({
         tlRef.current?.play();
         intervalRef.current = window.setInterval(swap, delay);
       };
-      node.addEventListener("mouseenter", pause);
-      node.addEventListener("mouseleave", resume);
+      // 被动监听，避免潜在阻塞
+      node.addEventListener("mouseenter", pause, { passive: true });
+      node.addEventListener("mouseleave", resume, { passive: true });
       return () => {
         node.removeEventListener("mouseenter", pause);
         node.removeEventListener("mouseleave", resume);
@@ -286,6 +286,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
         "max-w-7xl mx-auto px-4",
         className,
       ].join(" ")}
+      style={{ touchAction: "pan-y" }} // 允许页面垂直滚动
     >
       {/* 左侧文案 */}
       <div className="select-none">
@@ -293,12 +294,13 @@ const CardSwap: React.FC<CardSwapProps> = ({
         <div className="mt-3">{leftText}</div>
       </div>
 
-      {/* 右侧更大的卡片栈 */}
+      {/* 右侧更大的卡片栈（不拦截滚轮/触摸事件） */}
       <div
         className="
           relative justify-self-end
           [perspective:1000px] overflow-visible
           max-[768px]:scale-[0.85] max-[480px]:scale-[0.7]
+          pointer-events-none
         "
         aria-label="Card stack"
       >
