@@ -40,7 +40,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       {...rest}
       className={`absolute top-1/2 left-1/2 rounded-xl border-2 border-white/20 bg-black/70 overflow-hidden
         shadow-2xl [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden]
-        pointer-events-auto
+        pointer-events-auto cursor-target
         ${customClass ?? ""} ${rest.className ?? ""}`.trim()}
     />
   )

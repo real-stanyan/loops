@@ -3,15 +3,11 @@
 import { useState } from "react";
 import {
   Field,
-  FieldContent,
   FieldDescription,
-  FieldError,
   FieldGroup,
   FieldLabel,
   FieldLegend,
-  FieldSeparator,
   FieldSet,
-  FieldTitle,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Phone, Mail } from "lucide-react";
@@ -52,6 +48,7 @@ const ContactUs = () => {
       alert("Booking email sent!");
     } catch (error) {
       alert("Failed to send booking email.");
+      console.error(error);
     } finally {
       setLoading(false);
     }
@@ -162,7 +159,11 @@ const ContactUs = () => {
               <FieldError>Choose another username.</FieldError>
             </Field> */}
           </FieldGroup>
-          <Button variant="default" onClick={handleSubmit}>
+          <Button
+            variant="default"
+            onClick={handleSubmit}
+            className="cursor-target"
+          >
             {loading ? "Submitting..." : "Submit"}
           </Button>
         </FieldSet>

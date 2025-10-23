@@ -31,14 +31,14 @@ const BusinessCard = () => {
 
   return (
     <div className="grid grid-cols-2 xl:grid-cols-4 px-4 xl:px-8 gap-4 -translate-y-10">
-      {/* GRAPHIC/WEB DESIGN AND BUILDING */}
+      {/* Design & Dev */}
       <SpotlightCard
-        className="custom-spotlight-card flex flex-col gap-4"
+        className="custom-spotlight-card flex flex-col gap-4 cursor-target"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
         <CodeXml size={iconSize} />
         <h1 className="font-mono font-black text-lg xl:text-2xl tracking-wide">
-          GRAPHIC/WEB DESIGN AND BUILDING
+          Design & Dev
         </h1>
         <p className="font-light text-gray-400 text-sm hidden xl:inline">
           Comprehensive graphic and web design service — from visual identity to
@@ -50,7 +50,7 @@ const BusinessCard = () => {
 
       {/* CONTENT CREATION */}
       <SpotlightCard
-        className="custom-spotlight-card flex flex-col gap-4"
+        className="custom-spotlight-card flex flex-col gap-4 cursor-target"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
         <TextAlignStart size={iconSize} />
@@ -67,7 +67,7 @@ const BusinessCard = () => {
 
       {/* SOCIAL MEDIA MANAGEMENT */}
       <SpotlightCard
-        className="custom-spotlight-card flex flex-col gap-4"
+        className="custom-spotlight-card flex flex-col gap-4 cursor-target"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
         <CircleFadingPlus size={iconSize} />
@@ -84,7 +84,7 @@ const BusinessCard = () => {
 
       {/* DIGITAL MARKETING */}
       <SpotlightCard
-        className="custom-spotlight-card flex flex-col gap-4"
+        className="custom-spotlight-card flex flex-col gap-4 cursor-target"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
         <Rocket size={iconSize} />

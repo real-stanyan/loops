@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-import { Infinity } from "lucide-react";
 import Link from "next/link";
 
 const Header: React.FC = () => {
@@ -29,7 +28,7 @@ const Header: React.FC = () => {
           scrolled ? "shadow-xl" : "shadow-lg",
         ].join(" ")}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 cursor-target">
           <Link
             href="/"
             aria-label="loops home"
