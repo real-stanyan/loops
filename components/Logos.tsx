@@ -42,6 +42,9 @@ const imageLogos = [
 const Logos = () => {
   return (
     <div className="h-[200px] relative overflow-hidden mt-[100px]">
+      <h3 className="uppercase text-center font-mono font-black text-3xl sm:text-4xl mb-6">
+        COLLABORATIONS & PARTNERSHIPS
+      </h3>
       <LogoLoop
         logos={imageLogos}
         speed={120}
@@ -51,7 +54,7 @@ const Logos = () => {
         pauseOnHover
         scaleOnHover
         fadeOut
-        // fadeOutColor="#ffffff"
+        fadeOutColor="#000"
         ariaLabel="partners"
       />
     </div>
