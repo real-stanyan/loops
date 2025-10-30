@@ -1,34 +1,34 @@
-"use client";
+// "use client";
 
 import React from "react";
 import Plasma from "@/components/Plasma";
 import TextType from "@/components/TextType";
-import { useBreakpoint } from "@/utils/BreakpointBadge";
+// import { useBreakpoint } from "@/utils/BreakpointBadge";
 
 const Hero = () => {
-  const bp = useBreakpoint();
-  const SCALE: Record<string, number> = {
-    base: 0.5,
-    sm: 0.5,
-    md: 0.7,
-    lg: 1,
-    xl: 1.2,
-  };
+  // const bp = useBreakpoint();
+  // const SCALE: Record<string, number> = {
+  //   base: 0.5,
+  //   sm: 0.5,
+  //   md: 0.7,
+  //   lg: 1,
+  //   xl: 1.2,
+  // };
 
-  console.log(bp);
+  // console.log(bp);
   return (
     <section
       aria-label="Hero"
       className="relative w-full h-[100svh] overflow-hidden"
     >
-      {/* <Plasma
+      <Plasma
         color="#ff6b35"
         speed={0.6}
         direction="forward"
-        scale={SCALE[bp] ?? 1.0}
+        scale={1.0}
         opacity={0.8}
         mouseInteractive={false}
-      /> */}
+      />
 
       <TextType
         text={[
