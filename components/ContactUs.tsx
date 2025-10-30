@@ -67,9 +67,9 @@ const ContactUs = () => {
     `}
     >
       {/* Contact Left */}
-      <div className="flex-1 flex flex-col items-center xl:items-center gap-8">
-        <div className="flex flex-col items-center xl:items-center gap-4">
-          <h1 className="text-[#ff6b35] text-4xl font-mono font-black">
+      <div className="flex-1 flex flex-col items-center xl:items-start gap-8">
+        <div className="flex flex-col items-center xl:items-start gap-4">
+          <h1 className="text-[#ff6b35] text-4xl font-mono font-black uppercase">
             Get in Touch
           </h1>
           <p className="font-mono text-lg font-normal text-center xl:text-left">
@@ -103,7 +103,7 @@ const ContactUs = () => {
         `}
       >
         <FieldSet>
-          <FieldLegend className="text-center !text-3xl font-black">
+          <FieldLegend className="text-center !text-3xl font-black uppercase">
             Get a Free Quote
           </FieldLegend>
           <FieldDescription className="text-center text-xl">

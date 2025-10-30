@@ -4,7 +4,7 @@ import MagicBento from "./MagicBento";
 const OurServices = () => {
   return (
     <div>
-      <h3 className="text-center font-mono font-black text-3xl sm:text-4xl">
+      <h3 className="uppercase text-center font-mono font-black text-3xl sm:text-4xl">
         Our Service
       </h3>
       <MagicBento

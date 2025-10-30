@@ -3,12 +3,10 @@
 import React, { useEffect, useState } from "react";
 import SpotlightCard from "@/components/SpotlightCard";
 import { useBreakpoint } from "@/utils/BreakpointBadge";
-import {
-  CodeXml,
-  TextAlignStart,
-  CircleFadingPlus,
-  Rocket,
-} from "lucide-react";
+import { MdInsights } from "react-icons/md";
+import { LuTableOfContents } from "react-icons/lu";
+import { IoShareSocial } from "react-icons/io5";
+import { IoIosRocket } from "react-icons/io";
 
 const DEFAULT_SIZE = 30; // SSR-safe
 
@@ -31,71 +29,67 @@ const BusinessCard = () => {
 
   return (
     <div className="grid grid-cols-2 xl:grid-cols-4 px-4 xl:px-8 gap-4 -translate-y-10">
-      {/* Design & Dev */}
+      {/* Brand Strategy & Market Insights */}
       <SpotlightCard
         className="custom-spotlight-card flex flex-col gap-4 cursor-target"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
-        <CodeXml size={iconSize} />
-        <h1 className="font-mono font-black text-lg xl:text-2xl tracking-wide">
-          Design & Dev
+        <MdInsights size={iconSize} />
+        <h1 className="font-mono font-black text-lg xl:text-xl">
+          Brand Strategy & Market Insights
         </h1>
         <p className="font-light text-gray-400 text-sm hidden xl:inline">
-          Comprehensive graphic and web design service — from visual identity to
-          fully built websites, combining creative aesthetics with functional,
-          responsive, and user-focused development to strengthen your brand
-          presence online.
+          We start with strategy — uncovering what makes your brand unique and
+          how it connects with people. Our goal is to build brands with clarity,
+          purpose, and long-term vision.
         </p>
       </SpotlightCard>
 
-      {/* CONTENT CREATION */}
+      {/* Creative Direction & Content Production */}
       <SpotlightCard
         className="custom-spotlight-card flex flex-col gap-4 cursor-target"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
-        <TextAlignStart size={iconSize} />
-        <h1 className="font-mono font-black text-lg xl:text-2xl tracking-wide">
-          CONTENT CREATION
+        <LuTableOfContents size={iconSize} />
+        <h1 className="font-mono font-black text-lg xl:text-xl">
+          Creative Direction & Content Production
         </h1>
         <p className="font-light text-gray-400 text-sm hidden xl:inline">
-          Creating engaging, brand-aligned content across visual, written, and
-          digital formats — from product photography and social posts to
-          copywriting and multimedia storytelling — designed to capture
-          attention and communicate your message effectively.
+          We bring strategy to life through creativity. From concept to
+          execution, our creative work transforms ideas into experiences that
+          move audiences.
         </p>
       </SpotlightCard>
 
-      {/* SOCIAL MEDIA MANAGEMENT */}
+      {/* Marketing, Media & Communications */}
       <SpotlightCard
         className="custom-spotlight-card flex flex-col gap-4 cursor-target"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
-        <CircleFadingPlus size={iconSize} />
-        <h1 className="font-mono font-black text-lg xl:text-2xl tracking-wide">
-          SOCIAL MEDIA MANAGEMENT
+        <IoShareSocial size={iconSize} />
+        <h1 className="font-mono font-black text-lg xl:text-xl">
+          Marketing, Media & Communications
         </h1>
         <p className="font-light text-gray-400 text-sm hidden xl:inline">
-          Managing and growing your social presence through strategy, content
-          scheduling, audience engagement, and analytics — ensuring consistent
-          brand voice, higher reach, and measurable results across all major
-          platforms.
+          We amplify your brand through strategic communication and digital
+          performance. Every message is guided by insight, every channel by
+          purpose.
         </p>
       </SpotlightCard>
 
-      {/* DIGITAL MARKETING */}
+      {/* Brand Growth & Consulting */}
       <SpotlightCard
         className="custom-spotlight-card flex flex-col gap-4 cursor-target"
         spotlightColor="rgba(255, 107, 53, 0.2)"
       >
-        <Rocket size={iconSize} />
-        <h1 className="font-mono font-black text-lg xl:text-2xl tracking-wide">
-          DIGITAL MARKETING
+        <IoIosRocket size={iconSize} />
+        <h1 className="font-mono font-black text-lg xl:text-xl">
+          Brand Growth & Consulting
         </h1>
         <p className="font-light text-gray-400 text-sm hidden xl:inline">
-          Driving measurable growth through data-driven digital campaigns —
-          combining SEO, paid advertising, email marketing, and analytics to
-          increase visibility, attract the right audience, and convert
-          engagement into lasting customer relationships.
+          We believe in lasting partnerships. Beyond campaigns, we help brands
+          evolve — ensuring creative consistency, strategic direction, and
+          scalable growth.
         </p>
       </SpotlightCard>
     </div>

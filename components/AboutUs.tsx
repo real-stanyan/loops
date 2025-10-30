@@ -12,43 +12,50 @@ const AboutUs = () => {
         >
           {/* Text */}
           <div className="space-y-6">
-            <h2 className="font-mono font-black text-3xl sm:text-4xl tracking-tight">
+            <h2 className="font-mono font-black text-3xl sm:text-4xl tracking-tight uppercase">
               About <span className="text-[var(--decoration)]">Us</span>
             </h2>
 
-            <div className="space-y-4 text-base sm:text-lg text-white/90">
+            <div className="space-y-4 text-base sm:text-lg text-white/90 tracking-wide">
               <p>
-                We are a creative design and development studio focused on
-                crafting modern, high-performing digital experiences.
+                At{" "}
+                <strong className="text-[var(--decoration)] font-black">
+                  Loops Design Studio
+                </strong>
+                , we merge strategy, design, and technology to craft holistic
+                brand experiences. From insight to execution, we partner with
+                brands to define their identity, shape their presence, and
+                communicate with clarity and purpose.
               </p>
               <p>
-                From brand identity to full-scale websites, we merge aesthetics
-                with technology—blending thoughtful design, clean code, and a
-                user-first strategy to help brands stand out and grow online.
+                From brand strategy to full-scale digital development, we create
+                cohesive solutions that connect creativity with results —
+                blending thoughtful design, clean code, and user-centric
+                strategy to help brands stand out and grow with confidence.
               </p>
               <p>
                 Our multidisciplinary team covers{" "}
-                <span className="text-[var(--decoration)] font-semibold">
+                <strong className="text-[var(--decoration)] font-black">
                   visual design
-                </span>
+                </strong>
                 ,{" "}
-                <span className="text-[var(--decoration)] font-semibold">
+                <strong className="text-[var(--decoration)] font-black">
                   web development
-                </span>
+                </strong>
                 ,{" "}
-                <span className="text-[var(--decoration)] font-semibold">
+                <strong className="text-[var(--decoration)] font-black">
                   content creation
-                </span>
+                </strong>
                 ,{" "}
-                <span className="text-[var(--decoration)] font-semibold">
+                <strong className="text-[var(--decoration)] font-black">
                   social media
-                </span>{" "}
-                and{" "}
-                <span className="text-[var(--decoration)] font-semibold">
+                </strong>
+                , and{" "}
+                <strong className="text-[var(--decoration)] font-black">
                   digital marketing
-                </span>
-                —delivering cohesive, data-driven solutions that connect
-                creativity with results.
+                </strong>{" "}
+                — delivering data-driven, performance-focused outcomes that
+                elevate every touchpoint of a brand's journey.
               </p>
             </div>
 
