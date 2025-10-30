@@ -21,16 +21,16 @@ const Hero = () => {
       aria-label="Hero"
       className="relative w-full h-[100svh] overflow-hidden"
     >
-      <Plasma
+      {/* <Plasma
         color="#ff6b35"
         speed={0.6}
         direction="forward"
         scale={SCALE[bp] ?? 1.0}
         opacity={0.8}
         mouseInteractive={false}
-      />
+      /> */}
 
-      {/* <TextType
+      <TextType
         text={[
           "GRAPHIC/WEB DESIGN AND BUILDING",
           "CONTENT CREATION",
@@ -42,7 +42,7 @@ const Hero = () => {
         showCursor
         cursorCharacter="|"
         className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-[60] grid place-items-center text-center font-mono font-black text-4xl md:text-5xl xl:text-6xl"
-      /> */}
+      />
     </section>
   );
 };
