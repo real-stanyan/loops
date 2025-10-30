@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BusinessCard from "@/components/BusinessCard";
 import ContactUs from "@/components/ContactUs";
-import Projects from "@/components/Projects";
+// import Projects from "@/components/Projects";
 import OurServices from "@/components/OurServices";
 import AboutUs from "@/components/AboutUs";
 
@@ -24,7 +24,7 @@ export default function Home() {
         <OurServices />
 
         {/* projects */}
-        <Projects />
+        {/* <Projects /> */}
 
         <ContactUs />
       </div>

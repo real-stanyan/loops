@@ -14,6 +14,7 @@ import { Phone, Mail } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import emailjs from "emailjs-com";
+import { toast } from "sonner";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -25,7 +26,7 @@ const ContactUs = () => {
 
   const handleSubmit = async () => {
     if (!name || !email || !businessName || !message) {
-      alert("Please fill out the form.");
+      toast.error("Please fill the form");
       return;
     }
 
@@ -45,9 +46,13 @@ const ContactUs = () => {
         templateParams,
         process.env.NEXT_PUBLIC_USER_ID
       );
-      alert("Booking email sent!");
+      toast.success("Thanks — your message was sent");
+      setName("");
+      setEmail("");
+      setBusinessName("");
+      setMessage("");
     } catch (error) {
-      alert("Failed to send booking email.");
+      toast.error("We couldn't send it. Please retry");
       console.error(error);
     } finally {
       setLoading(false);

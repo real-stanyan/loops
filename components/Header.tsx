@@ -19,7 +19,7 @@ const Header: React.FC = () => {
       <div
         className={[
           "w-full max-w-5xl h-16 rounded-full px-5 sm:px-6",
-          "flex items-center justify-between",
+          "flex items-center justify-center md:justify-between",
           // darker glass
           "backdrop-blur-2xl backdrop-saturate-150",
           "bg-black/45 supports-[backdrop-filter]:bg-black/55",
@@ -50,14 +50,14 @@ const Header: React.FC = () => {
           </span>
         </div>
 
-        <nav className="flex items-center gap-6 text-sm">
+        {/* <nav className="flex items-center gap-6 text-sm">
           <a className="font-medium text-white/90 hover:text-white" href="#">
             Home
           </a>
           <a className="font-medium text-white/90 hover:text-white" href="#">
             Docs
           </a>
-        </nav>
+        </nav> */}
       </div>
     </header>
   );
