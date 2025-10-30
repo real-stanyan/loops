@@ -30,7 +30,7 @@ const Hero = () => {
         mouseInteractive={false}
       />
 
-      <TextType
+      {/* <TextType
         text={[
           "GRAPHIC/WEB DESIGN AND BUILDING",
           "CONTENT CREATION",
@@ -42,7 +42,7 @@ const Hero = () => {
         showCursor
         cursorCharacter="|"
         className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-[60] grid place-items-center text-center font-mono font-black text-4xl md:text-5xl xl:text-6xl"
-      />
+      /> */}
     </section>
   );
 };
