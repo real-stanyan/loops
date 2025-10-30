@@ -17,9 +17,9 @@ export default function Home() {
         <Hero />
 
         {/* BusinessCard */}
-        <BusinessCard />
+        {/* <BusinessCard /> */}
 
-        {/* <AboutUs /> */}
+        <AboutUs />
 
         <OurServices />
 
