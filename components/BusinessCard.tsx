@@ -71,7 +71,7 @@ const CardItem = ({
           href={href}
           className="
         text-black/60 text-sm hover:text-[var(--decoration)] transition-colors
-        duration-200 ease-in-out hidden xl:block xl:mt-auto
+        duration-200 ease-in-out hidden xl:block xl:mt-auto uppercase
       "
         >
           read more
@@ -115,7 +115,7 @@ const BusinessCard = () => {
   ];
 
   return (
-    <div className="grid grid-cols-2 xl:grid-cols-4 px-6 xl:px-10 py-8 xl:py-15 gap-6 md:gap-10 xl:gap-12 bg-white text-[rgb(29,29,31)]">
+    <div className="grid grid-cols-2 xl:grid-cols-4 px-6 xl:px-10 py-8 xl:py-15 gap-6 md:gap-10 xl:gap-12 bg-[#f5f5f7] text-[#1d1d1f]">
       {items.map((it, i) => (
         <CardItem key={i} {...it} />
       ))}
