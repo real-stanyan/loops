@@ -62,16 +62,16 @@ const AboutUs = () => {
             {/* Small highlights */}
             <ul className="mt-4 grid grid-cols-2 gap-3 text-sm text-white/80">
               <li className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur supports-[backdrop-filter]:bg-white/5">
-                Performance-first
+                Strategy-led
               </li>
               <li className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
-                Clean, scalable code
+                Design-driven
               </li>
               <li className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
-                Brand-led UI/UX
+                Technology-empowered
               </li>
               <li className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
-                Data-driven growth
+                Growth-focused
               </li>
             </ul>
           </div>
