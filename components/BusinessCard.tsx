@@ -115,7 +115,12 @@ const BusinessCard = () => {
   ];
 
   return (
-    <div className="grid grid-cols-2 xl:grid-cols-4 px-6 xl:px-10 py-8 xl:py-15 gap-6 md:gap-10 xl:gap-12 bg-[#f5f5f7] text-[#1d1d1f]">
+    <div
+      className={`
+      grid grid-cols-2 xl:grid-cols-4 px-6 xl:px-10 py-8 xl:py-15 gap-6 md:gap-10 
+      xl:gap-12 bg-[#f5f5f7] text-[#1d1d1f]
+    `}
+    >
       {items.map((it, i) => (
         <CardItem key={i} {...it} />
       ))}

@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import BusinessCard from "@/components/BusinessCard";
 import ContactUs from "@/components/ContactUs";
 // import Projects from "@/components/Projects";
-import OurServices from "@/components/OurServices";
+import SignatureServices from "@/components/SignatureServices";
 import AboutUs from "@/components/AboutUs";
 import Logos from "@/components/Logos";
 
@@ -22,7 +22,7 @@ export default function Home() {
 
         <AboutUs />
 
-        <OurServices />
+        <SignatureServices />
 
         <Logos />
 
