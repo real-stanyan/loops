@@ -53,7 +53,7 @@ const SectionItem = ({
       >
         {/* 行1：标题（含图标）— 固定高度，最多2行 */}
         <div className="flex items-start gap-3 xl:min-h-[48px]">
-          <Icon className="text-3xl shrink-0" />
+          <Icon className="text-4xl shrink-0 text-[var(--decoration)]" />
           <h3 className="font-black text-lg md:text-xl leading-snug line-clamp-2">
             {title}
           </h3>
@@ -90,10 +90,10 @@ const SignatureServices = () => {
       intro:
         "At Loops Design Studio, we believe strong visuals shape perception and emotion. We turn ideas into timeless design experiences.",
       points: [
-        "Brand Visual Identity Design – cohesive brand systems with thoughtful logos, typography, and color harmony.",
-        "Website Design & Development – elegant, user-focused sites that blend aesthetic and function.",
-        "Packaging Design – details that elevate product story and shelf appeal.",
-        "Product Photography – refined composition and lighting to inspire and convert.",
+        "Brand Visual Identity Design - cohesive brand systems with thoughtful logos, typography, and color harmony.",
+        "Website Design & Development - elegant, user-focused sites that blend aesthetic and function.",
+        "Packaging Design - details that elevate product story and shelf appeal.",
+        "Product Photography - refined composition and lighting to inspire and convert.",
       ],
     },
     {
@@ -102,8 +102,9 @@ const SignatureServices = () => {
       intro:
         "We connect creativity with performance to help brands grow smarter, stronger, and faster online.",
       points: [
-        "SEO Strategy – tailored plans to improve visibility and organic reach.",
-        "Google & Meta Advertising – end-to-end campaign creation and optimization for measurable ROI.",
+        "SEO Strategy - tailored plans to improve visibility and organic reach.",
+        "Google & Meta Advertising - end-to-end campaign creation and optimization for measurable ROI.",
+        "Conversion Rate Optimization (CRO) - data-driven testing to increase conversions and AOV.",
       ],
     },
     {
@@ -112,9 +113,9 @@ const SignatureServices = () => {
       intro:
         "We tell stories that resonate and build authentic relationships through strategy, creativity, and collaboration.",
       points: [
-        "Social Media Marketing – narratives that strengthen community and drive interaction.",
-        "Influencer Marketing Service – partner with the right creators for results-driven collaborations.",
-        "Content Creation – on-brand visuals and copy that inspire action.",
+        "Social Media Marketing - narratives that strengthen community and drive interaction.",
+        "Influencer Marketing Service - partner with the right creators for results-driven collaborations.",
+        "Content Creation - on-brand visuals and copy that inspire action.",
       ],
     },
   ];

@@ -106,8 +106,9 @@ const ContactUs = () => {
           <FieldLegend className="text-center !text-3xl font-black uppercase">
             Get a Free Quote
           </FieldLegend>
-          <FieldDescription className="text-center text-xl">
-            We will be available to call 24/7
+          <FieldDescription className="text-center text-md">
+            Unlock Your Free Growth Strategy from Australia's best Marketing
+            Agency
           </FieldDescription>
           <FieldGroup>
             {/* Name */}

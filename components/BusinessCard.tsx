@@ -53,10 +53,10 @@ const CardItem = ({
       cursor-pointer overflow-hidden h-[200px] md:h-[250px] xl:h-[350px]
       justify-center xl:justify-start rounded
       transform-gpu will-change-transform transition-transform duration-300
-      xl:hover:scale-105 hover:z-10
+      xl:hover:scale-105 hover:z-10 bg-white
     "
       >
-        <Icon className="text-4xl mx-auto xl:mx-1" color="#1d1d1f" />
+        <Icon className="text-4xl mx-auto xl:mx-1 text-[var(--decoration)]" />
         <h1 className="font-black text-lg xl:text-xl text-center xl:text-left">
           {titleLines[0]}
           {titleLines[1] && (
