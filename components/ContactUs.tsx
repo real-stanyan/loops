@@ -69,10 +69,10 @@ const ContactUs = () => {
       {/* Contact Left */}
       <div className="flex-1 flex flex-col items-center xl:items-start gap-8">
         <div className="flex flex-col items-center xl:items-start gap-4">
-          <h1 className="text-[#ff6b35] text-4xl font-mono font-black uppercase">
+          <h1 className="text-[#ff6b35] text-4xl font-black uppercase">
             Get in Touch
           </h1>
-          <p className="font-mono text-lg font-normal text-center xl:text-left">
+          <p className="text-lg font-normal text-center xl:text-left">
             We look forward to connecting with you and discussing how we can
             help your brand thrive with tailored marketing strategies.
           </p>
@@ -83,16 +83,14 @@ const ContactUs = () => {
             <div className="bg-[#ff6b35] p-2 rounded-full">
               <Phone size={25} />
             </div>
-            <h1 className="font-mono font-semibold text-xl">0405155473</h1>
+            <h1 className="font-semibold text-xl">0405155473</h1>
           </div>
           {/* Mail */}
           <div className="flex justify-start items-center gap-10">
             <div className="bg-[#ff6b35] p-2 rounded-full">
               <Mail size={25} />
             </div>
-            <h1 className="font-mono font-semibold text-xl">
-              info@loopsdesignstudio.co
-            </h1>
+            <h1 className="font-semibold text-xl">info@loopsdesignstudio.co</h1>
           </div>
         </div>
       </div>

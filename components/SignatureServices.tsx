@@ -125,7 +125,7 @@ const SignatureServices = () => {
       <div className="mx-auto max-w-7xl px-6 xl:px-10 py-10 xl:py-16">
         <h2
           className={`
-          mb-8 font-mono font-black text-3xl sm:text-4xl text-center uppercase
+          mb-8  font-black text-3xl sm:text-4xl text-center uppercase
           `}
         >
           Signature Services

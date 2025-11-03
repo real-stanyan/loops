@@ -41,7 +41,7 @@ const Hero = () => {
         pauseDuration={1500}
         showCursor
         cursorCharacter="|"
-        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-[60] grid place-items-center text-center font-mono font-black text-4xl md:text-5xl xl:text-6xl"
+        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-[60] grid place-items-center text-center  font-black text-4xl md:text-5xl xl:text-6xl"
       />
     </section>
   );

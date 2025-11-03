@@ -12,7 +12,7 @@ const AboutUs = () => {
         >
           {/* Text */}
           <div className="space-y-6">
-            <h2 className="font-mono font-black text-3xl sm:text-4xl tracking-tight uppercase">
+            <h2 className="font-black text-3xl sm:text-4xl tracking-tight uppercase">
               About <span className="text-[var(--decoration)]">Us</span>
             </h2>
 

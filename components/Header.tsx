@@ -45,7 +45,7 @@ const Header: React.FC = () => {
             />
           </Link>
 
-          <span className="font-mono font-semibold text-white/90">
+          <span className=" font-semibold text-white/90">
             LOOPS DESIGN STUDIO
           </span>
         </div>
