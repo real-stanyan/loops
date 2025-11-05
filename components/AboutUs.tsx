@@ -1,7 +1,38 @@
+"use client";
+
+import { useRef } from "react";
 import React from "react";
 import Image from "next/image";
 
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const AboutUs = () => {
+  const FadeInYs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useGSAP(() => {
+    FadeInYs.current.forEach((FadeInY) => {
+      if (FadeInY) {
+        gsap.fromTo(
+          FadeInY,
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: FadeInY,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+    });
+  }, []);
   return (
     <section className="relative">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-24">
@@ -11,7 +42,12 @@ const AboutUs = () => {
           ].join(" ")}
         >
           {/* Text */}
-          <div className="space-y-6">
+          <div
+            className="space-y-6"
+            ref={(el) => {
+              if (el) FadeInYs.current[0] = el as HTMLDivElement;
+            }}
+          >
             <h2 className="font-black text-3xl sm:text-4xl tracking-tight uppercase">
               About <span className="text-[var(--decoration)]">Us</span>
             </h2>
@@ -78,6 +114,9 @@ const AboutUs = () => {
 
           {/* Image card */}
           <div
+            ref={(el) => {
+              if (el) FadeInYs.current[1] = el as HTMLDivElement;
+            }}
             className={[
               "relative isolate overflow-hidden",
               "rounded-3xl p-[1px]",

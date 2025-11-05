@@ -41,7 +41,7 @@ const imageLogos = [
 
 const Logos = () => {
   return (
-    <div className="h-[200px] relative overflow-hidden mt-[100px]">
+    <div className="h-[200px] relative overflow-hidden my-[100px]">
       <h3 className="uppercase text-center  font-black text-3xl sm:text-4xl mb-6">
         COLLABORATIONS & PARTNERSHIPS
       </h3>

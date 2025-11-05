@@ -48,12 +48,12 @@ const SectionItem = ({
         className={`
       relative h-full rounded border-2 border-[#dedede] bg-white text-[#1d1d1f]
       transform-gpu transition-transform duration-300 hover:scale-[1.02] hover:z-10
-      p-4 md:p-6 xl:p-8 grid grid-rows-[auto_auto_1fr] gap-4
+      p-4 md:p-6 xl:p-8 grid grid-rows-[auto_auto_1fr] gap-4 group
       `}
       >
         {/* 行1：标题（含图标）— 固定高度，最多2行 */}
         <div className="flex items-start gap-3 xl:min-h-[48px]">
-          <Icon className="text-4xl shrink-0 text-[var(--decoration)]" />
+          <Icon className="text-4xl shrink-0 text-[var(--decoration)] group-hover:animate-bounce" />
           <h3 className="font-black text-lg md:text-xl leading-snug line-clamp-2">
             {title}
           </h3>

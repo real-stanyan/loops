@@ -6,7 +6,7 @@ import CardSwap, { Card } from "@/components/CardSwap";
 
 const Projects = () => {
   return (
-    <section className="mx-auto w-screen">
+    <section className="mx-auto w-screen bg-[#f5f5f7] text-[#1d1d1f]">
       <div className="relative overflow-hidden">
         {/* 关键：overflow-hidden */}
         <CardSwap
@@ -16,59 +16,39 @@ const Projects = () => {
           pauseOnHover={false}
         >
           <Card>
-            <Link href={"https://marketlane.com.au/"} target="_blank">
+            <Link href={"https://www.fujisushi.com.au/"} target="_blank">
               {/* title */}
               <div className="relative z-10 flex items-center gap-2 p-2 border-b-2 border-white/20 bg-black/60">
                 <CodeXml size={20} />
-                <h1>www.xxxx.com</h1>
+                <h1>www.fujisushi.com.au</h1>
               </div>
 
               {/* image */}
               <div className="relative aspect-video overflow-hidden w-full h-full">
                 <Image
-                  src="/projects/placeholder.webp"
-                  alt="placeholder"
+                  src="/projects/fujisushi.webp"
+                  alt="fujisushi"
                   fill
-                  className="object-cover"
-                />
-              </div>
-            </Link>
-          </Card>
-
-          <Card>
-            <Link href={"https://marketlane.com.au/"} target="_blank">
-              {/* title */}
-              <div className="relative z-10 flex items-center gap-2 p-2 border-b-2 border-white/20 bg-black/60">
-                <CodeXml size={20} />
-                <h1>www.xxxx.com</h1>
-              </div>
-
-              {/* image */}
-              <div className="relative aspect-video overflow-hidden w-full h-full">
-                <Image
-                  src="/projects/placeholder.webp"
-                  alt="placeholder"
-                  fill
-                  className="object-cover"
+                  className="object-fill"
                 />
               </div>
             </Link>
           </Card>
           <Card>
-            <Link href={"https://marketlane.com.au/"} target="_blank">
+            <Link href={"https://www.grantedbeauty.com.au/"} target="_blank">
               {/* title */}
               <div className="relative z-10 flex items-center gap-2 p-2 border-b-2 border-white/20 bg-black/60">
                 <CodeXml size={20} />
-                <h1>www.xxxx.com</h1>
+                <h1>www.grantedbeauty.com.au</h1>
               </div>
 
               {/* image */}
               <div className="relative aspect-video overflow-hidden w-full h-full">
                 <Image
-                  src="/projects/placeholder.webp"
-                  alt="placeholder"
+                  src="/projects/granted.webp"
+                  alt="granted"
                   fill
-                  className="object-cover"
+                  className="object-fill"
                 />
               </div>
             </Link>
