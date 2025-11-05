@@ -42,7 +42,7 @@ const imageLogos = [
 const Logos = () => {
   return (
     <div className="h-[200px] relative overflow-hidden my-[100px]">
-      <h3 className="uppercase text-center  font-black text-3xl sm:text-4xl mb-6">
+      <h3 className="uppercase text-center font-black text-xl md:text-2xl xl:text-3xl mb-6">
         COLLABORATIONS & PARTNERSHIPS
       </h3>
       <LogoLoop

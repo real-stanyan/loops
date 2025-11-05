@@ -401,9 +401,9 @@ const HeaderNavPE: React.FC<HeaderNavPEProps> = ({
                 {navs.map((entry, idx) =>
                   isGroup(entry) ? (
                     <section key={`g-${idx}`} className="flex flex-col gap-3">
-                      <h3 className="m-0 text-2xl font-semibold uppercase tracking-wide">
-                        {entry.groupName}
-                      </h3>
+                      <div className="m-0 text-base font-semibold uppercase tracking-wide bg-[#1d1d1f] text-[#f5f5f7] rounded p-2">
+                        <h3>{entry.groupName}</h3>
+                      </div>
                       <ul className="list-none m-0 p-0 flex flex-col gap-4">
                         {entry.items.map((it, j) => {
                           const Icon = it.icon;
@@ -454,7 +454,7 @@ const HeaderNavPE: React.FC<HeaderNavPEProps> = ({
                         )}
                         <span
                           className={`
-                        sm-panel-itemLabel inline-block will-change-transform [transform-origin:50%_100%] text-3xl font-semibold uppercase tracking-[-0.025em]
+                        sm-panel-itemLabel inline-block will-change-transform [transform-origin:50%_100%] text-base font-semibold uppercase tracking-[-0.025em]
                          text-[#1d1d1f] group-hover:text-[var(--sm-accent,#ff6b35)]
                           `}
                         >

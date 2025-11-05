@@ -49,7 +49,7 @@ const CardItem = ({
     <div ref={ref}>
       <div
         className="
-      relative flex flex-col gap-4 border-[#dedede] border-2 p-4 md:p-6 xl:p-8
+      relative flex flex-col gap-4 border-[#dedede] border-2 p-2 md:p-6 xl:p-8
       cursor-pointer overflow-hidden h-[200px] md:h-[250px] xl:h-[350px]
       justify-center xl:justify-start rounded
       transform-gpu will-change-transform transition-transform duration-300
@@ -62,7 +62,7 @@ const CardItem = ({
           group-hover:animate-bounce
           `}
         />
-        <h1 className="font-black text-lg xl:text-xl text-center xl:text-left">
+        <h1 className="font-black text-md md:text-lg xl:text-xl text-center xl:text-left">
           {titleLines[0]}
           {titleLines[1] && (
             <>

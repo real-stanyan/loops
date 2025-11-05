@@ -94,7 +94,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
   easing = "elastic",
   children,
   leftTitle = (
-    <span className="block text-2xl md:text-3xl xl:text-4xl font-semibold">
+    <span className="block text-2xl md:text-3xl xl:text-4xl font-semibold uppercase">
       What we do
     </span>
   ),
@@ -282,7 +282,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
     <div
       ref={container}
       className={[
-        "relative grid w-full items-center gap-8 xl:grid-cols-[1fr_auto] h-[100vh]",
+        "relative grid w-full items-center gap-8 xl:grid-cols-[1fr_auto] h-[100vh] text-[#1d1d1f]",
         "max-w-7xl mx-auto px-4",
         className,
       ].join(" ")}
