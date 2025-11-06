@@ -1,15 +1,13 @@
+// src/i18n/request.ts
 import { getRequestConfig } from "next-intl/server";
-import { hasLocale } from "next-intl";
 import { routing } from "./routing";
-import en from "@/messages/en.json";
-import zh from "@/messages/zh.json";
 
 export default getRequestConfig(async ({ requestLocale }) => {
-  // Typically corresponds to the `[locale]` segment
-  const requested = await requestLocale;
-  const locale = hasLocale(routing.locales, requested)
-    ? requested
-    : routing.defaultLocale;
-
-  return { locale, messages: locale === "zh" ? zh : en };
+  let locale = (await requestLocale) ?? routing.defaultLocale;
+  if (!routing.locales.includes(locale as any)) {
+    locale = routing.defaultLocale;
+  }
+  // 动态按需加载，避免把所有语言打进同一 bundle
+  const messages = (await import(`@/messages/${locale}.json`)).default;
+  return { locale, messages };
 });
