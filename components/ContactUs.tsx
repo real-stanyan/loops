@@ -15,8 +15,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import emailjs from "emailjs-com";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 const ContactUs = () => {
+  const t = useTranslations("ContactUs");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [businessName, setBusinessName] = useState("");
@@ -70,11 +72,10 @@ const ContactUs = () => {
       <div className="flex-1 flex flex-col items-center xl:items-start gap-8">
         <div className="flex flex-col items-center xl:items-start gap-4">
           <h1 className="text-[#ff6b35] text-4xl font-black uppercase">
-            Get in Touch
+            {t.raw("leftSide").title}
           </h1>
           <p className="text-lg font-normal text-center xl:text-left">
-            We look forward to connecting with you and discussing how we can
-            help your brand thrive with tailored marketing strategies.
+            {t.raw("leftSide").content}
           </p>
         </div>
         <div className="grid grid-cols-1 gap-6">
@@ -102,20 +103,21 @@ const ContactUs = () => {
       >
         <FieldSet>
           <FieldLegend className="text-center !text-3xl font-black uppercase">
-            Get a Free Quote
+            {t.raw("rightSide").title}
           </FieldLegend>
           <FieldDescription className="text-center text-md">
-            Unlock Your Free Growth Strategy from Australia's best Marketing
-            Agency
+            {t.raw("rightSide").content}
           </FieldDescription>
           <FieldGroup>
             {/* Name */}
             <Field>
-              <FieldLabel htmlFor="name">Name</FieldLabel>
+              <FieldLabel htmlFor="name">
+                {t.raw("rightSide").name.title}
+              </FieldLabel>
               <Input
                 id="name"
                 autoComplete="off"
-                placeholder="Enter your name"
+                placeholder={t.raw("rightSide").name.placeholder}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -125,33 +127,39 @@ const ContactUs = () => {
             </Field>
             {/* Email */}
             <Field>
-              <FieldLabel htmlFor="email">Email</FieldLabel>
+              <FieldLabel htmlFor="email">
+                {t.raw("rightSide").email.title}
+              </FieldLabel>
               <Input
                 id="email"
                 autoComplete="on"
-                placeholder="Enter your email address"
+                placeholder={t.raw("rightSide").email.placeholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Field>
             {/* Business Name */}
             <Field>
-              <FieldLabel htmlFor="businessName">Business Name</FieldLabel>
+              <FieldLabel htmlFor="businessName">
+                {t.raw("rightSide").businessName.title}
+              </FieldLabel>
               <Input
                 id="businessName"
                 autoComplete="off"
-                placeholder="Enter your business name"
+                placeholder={t.raw("rightSide").businessName.placeholder}
                 value={businessName}
                 onChange={(e) => setBusinessName(e.target.value)}
               />
             </Field>
             {/* Message */}
             <Field>
-              <FieldLabel htmlFor="message">Message</FieldLabel>
+              <FieldLabel htmlFor="message">
+                {t.raw("rightSide").message.title}
+              </FieldLabel>
               <Textarea
                 id="message"
                 autoComplete="off"
-                placeholder="Enter your message"
+                placeholder={t.raw("rightSide").message.placeholder}
                 className="w-full h-[200px]"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -168,7 +176,11 @@ const ContactUs = () => {
             onClick={handleSubmit}
             className="cursor-target"
           >
-            {loading ? "Submitting..." : "Submit"}
+            {loading ? (
+              <span>{t.raw("function_button").loading}</span>
+            ) : (
+              <span>{t.raw("function_button").default}</span>
+            )}
           </Button>
         </FieldSet>
       </div>

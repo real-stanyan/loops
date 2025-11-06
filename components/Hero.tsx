@@ -4,8 +4,10 @@ import React from "react";
 import Plasma from "@/components/Plasma";
 import TextType from "@/components/TextType";
 import { useBreakpoint } from "@/utils/BreakpointBadge";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
+  const t = useTranslations("HomePage");
   const bp = useBreakpoint();
   const SCALE: Record<string, number> = {
     base: 0.5,
@@ -31,12 +33,7 @@ const Hero = () => {
       />
 
       <TextType
-        text={[
-          "GRAPHIC/WEB DESIGN AND BUILDING",
-          "CONTENT CREATION",
-          "SOCIAL MEDIA MANAGEMENT",
-          "DIGITAL MARKETING",
-        ]}
+        text={t.raw("hero_texts")}
         typingSpeed={75}
         pauseDuration={1500}
         showCursor

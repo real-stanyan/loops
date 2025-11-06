@@ -8,8 +8,10 @@ import SignatureServices from "@/components/SignatureServices";
 import AboutUs from "@/components/AboutUs";
 import Logos from "@/components/Logos";
 import Projects from "@/components/Projects";
+import { useTranslations } from "next-intl";
 
-export default function Home() {
+export default function Page() {
+  const t = useTranslations("HomePage");
   return (
     <main className="relative min-h-[100svh] overflow-x-hidden">
       <Hero />

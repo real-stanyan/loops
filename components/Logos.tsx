@@ -1,5 +1,6 @@
 import React from "react";
 import LogoLoop from "./LogoLoop";
+import { getTranslations } from "next-intl/server";
 
 const imageLogos = [
   {
@@ -37,13 +38,24 @@ const imageLogos = [
     alt: "YSL",
     href: "https://www.ysl.com/en-au",
   },
+  {
+    src: "/logos/granted.webp",
+    alt: "granted",
+    href: "https://www.grantedbeauty.com.au/",
+  },
+  {
+    src: "/logos/morimoon.webp",
+    alt: "morimoon",
+    href: "https://www.morimoon.com.au/",
+  },
 ];
 
-const Logos = () => {
+const Logos = async () => {
+  const t = await getTranslations("Partnerships");
   return (
     <div className="h-[200px] relative overflow-hidden my-[100px]">
       <h3 className="uppercase text-center font-black text-xl md:text-2xl xl:text-3xl mb-6">
-        COLLABORATIONS & PARTNERSHIPS
+        {t("title")}
       </h3>
       <LogoLoop
         logos={imageLogos}

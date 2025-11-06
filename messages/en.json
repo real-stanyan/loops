@@ -1,0 +1,334 @@
+{
+  "Header": {
+    "title": "LOOPS DESIGN STUDIO",
+    "navs": [
+      { "name": "Home", "href": "/" },
+      {
+        "name": "Services",
+        "items": [
+          {
+            "icon": "MdInsights",
+            "name": "Brand Strategy & Market Insights",
+            "href": "/"
+          },
+          {
+            "icon": "LuTableOfContents",
+            "name": "Creative Direction & Content Production",
+            "href": "/"
+          },
+          {
+            "icon": "IoShareSocial",
+            "name": "Marketing, Media & Communications",
+            "href": "/"
+          },
+          {
+            "icon": "IoIosRocket",
+            "name": "Brand Growth & Consulting",
+            "href": "/"
+          }
+        ]
+      },
+      {
+        "name": "Signature Services",
+        "items": [
+          {
+            "icon": "MdDesignServices",
+            "title": "Creative & Visual Design",
+            "href": "/"
+          },
+          {
+            "icon": "MdTrendingUp",
+            "title": "Digital Marketing Strategy",
+            "href": "/"
+          },
+          {
+            "icon": "IoPeopleOutline",
+            "title": "Social Media & Influencer Marketing",
+            "href": "/"
+          }
+        ]
+      },
+      { "name": "Partnerships", "href": "/partnerships" },
+      { "name": "FAQs", "href": "/faqs" }
+    ],
+    "function_button": "Close"
+  },
+  "HomePage": {
+    "hero_texts": [
+      "GRAPHIC/WEB DESIGN AND BUILDING",
+      "CONTENT CREATION",
+      "SOCIAL MEDIA MANAGEMENT",
+      "DIGITAL MARKETING"
+    ]
+  },
+  "AboutUs": {
+    "title": "ABOUT",
+    "sub_title": "US",
+    "content": [
+      "At Loops descign Studio, we merge strategy, descign, and technology to craft holistic brand experiences. From insight to execution, we partner with brands to define their identity, shape their presence, and communicate with clarity and purpose.",
+      "From brand strategy to full-scale digital development, we create cohesive solutions that connect creativity with results — blending thoughtful descign, clean code, and user-centric strategy to help brands stand out and grow with confidence.",
+      "Our multidisciplinary team covers visual descign, web development, content creation, social media, and digital marketing — delivering data-driven, performance-focused outcomes that elevate every touchpoint of a brand's journey."
+    ],
+    "highlights": [
+      "Strategy-led",
+      "descign-driven",
+      "Technology-empowered",
+      "Growth-focused"
+    ]
+  },
+  "BusinessCard": {
+    "card": [
+      {
+        "Icon": "MdInsights",
+        "title": "Brand Strategy & Market Insights",
+        "desc": "We start with strategy — uncovering what makes your brand unique and how it connects with people. Our goal is to build brands with clarity, purpose, and long-term vision.",
+        "href": "/"
+      },
+      {
+        "Icon": "LuTableOfContents",
+        "title": "Creative Direction & Content Production",
+        "desc": "We bring strategy to life through creativity. From concept to execution, our creative work transforms ideas into experiences that move audiences.",
+        "href": "/"
+      },
+      {
+        "Icon": "IoShareSocial",
+        "title": "Marketing, Media & Communications",
+        "desc": "We amplify your brand through strategic communication and digital performance. Every message is guided by insight, every channel by purpose.",
+        "href": "/"
+      },
+      {
+        "Icon": "IoIosRocket",
+        "title": "Brand Growth & Consulting",
+        "desc": "We believe in lasting partnerships. Beyond campaigns, we help brands evolve — ensuring creative consistency, strategic direction, and scalable growth.",
+        "href": "/"
+      }
+    ],
+    "link_text": "READ MORE"
+  },
+  "SignatureServices": {
+    "title": "Signature Services",
+    "card": [
+      {
+        "icon": "MdDesignServices",
+        "title": "Creative & Visual Design",
+        "content": "At Loops Design Studio, we believe that strong visuals shape perception and emotion. Our creative team transforms ideas into timeless design experiences.",
+        "list": [
+          {
+            "title": "Brand Visual Identity Design",
+            "content": "We craft cohesive brand systems that express who you are through thoughtful logos, typography, and color harmony."
+          },
+          {
+            "title": "Website Design & Development",
+            "content": "We design and build elegant, user-focused websites that blend aesthetics with functionality to create seamless digital journeys."
+          },
+          {
+            "title": "Packaging Design",
+            "content": "Every detail counts. We develop packaging that not only protects but also speaks—elevating your product's story and shelf appeal."
+          },
+          {
+            "title": "Product Photography",
+            "content": "Our photography captures your product's essence with refined composition and lighting, designed to inspire and convert."
+          }
+        ]
+      },
+      {
+        "icon": "MdTrendingUp",
+        "title": "Digital Marketing Strategy",
+        "content": "We connect creativity with performance. Through strategic marketing, we help brands grow smarter, stronger, and faster in the digital landscape.",
+        "list": [
+          {
+            "title": "SEO Strategy",
+            "content": "Our tailored SEO solutions enhance visibility and organic reach, ensuring your brand is discovered by the right audience."
+          },
+          {
+            "title": "Google & Meta Advertising",
+            "content": "From concept to conversion, we create and manage ad campaigns that maximize engagement, reach, and measurable ROI."
+          },
+          {
+            "title": "Conversion Rate Optimization (CRO)",
+            "content": "data-driven testing to increase conversions and AOV."
+          }
+        ]
+      },
+      {
+        "icon": "IoPeopleOutline",
+        "title": "Social Media & Influencer Marketing",
+        "content": "We tell stories that resonate. By blending strategy, creativity, and collaboration, we help brands build authentic relationships online.",
+        "list": [
+          {
+            "title": "Social Media Marketing",
+            "content": "We craft digital narratives that strengthen community, drive interaction, and amplify your voice across platforms."
+          },
+          {
+            "title": "Influencer Marketing Service",
+            "content": "We partner with influencers who embody your brand values to create meaningful, results-driven collaborations."
+          },
+          {
+            "title": "Content Creation",
+            "content": "From visuals to copy, we create original, on-brand content designed to inspire emotion and encourage action."
+          }
+        ]
+      }
+    ]
+  },
+  "Partnerships": {
+    "title": "COLLABORATIONS & PARTNERSHIPS"
+  },
+  "Projects": {
+    "title": "WHAT WE DO",
+    "content": "Branding, Web, Content. Results, not buzzwords."
+  },
+  "ContactUs": {
+    "leftSide": {
+      "title": "Get in Touch",
+      "content": "We look forward to connecting with you and discussing how we can help your brand thrive with tailored marketing strategies."
+    },
+    "rightSide": {
+      "title": "Get a Free Quote",
+      "content": "Unlock Your Free Growth Strategy from Australia's best Marketing Agency",
+      "name": { "title": "Name", "placeholder": "Enter your name" },
+      "email": { "title": "Email", "placeholder": "Enter your email address" },
+      "businessName": {
+        "title": "Business Name",
+        "placeholder": "Enter your business name"
+      },
+      "message": {
+        "title": "Message",
+        "placeholder": "Enter your message"
+      }
+    },
+    "function_button": { "default": "Submit", "loading": "Submitting..." }
+  },
+  "Footer": {
+    "title": "LOOPS DESIGN STUDIO",
+    "navs": [
+      {
+        "name": "Services",
+        "items": [
+          {
+            "icon": "MdInsights",
+            "name": "Brand Strategy & Market Insights",
+            "href": "/"
+          },
+          {
+            "icon": "LuTableOfContents",
+            "name": "Creative Direction & Content Production",
+            "href": "/"
+          },
+          {
+            "icon": "IoShareSocial",
+            "name": "Marketing, Media & Communications",
+            "href": "/"
+          },
+          {
+            "icon": "IoIosRocket",
+            "name": "Brand Growth & Consulting",
+            "href": "/"
+          }
+        ]
+      },
+      {
+        "name": "Signature Services",
+        "items": [
+          {
+            "icon": "MdDesignServices",
+            "title": "Creative & Visual Design",
+            "href": "/"
+          },
+          {
+            "icon": "MdTrendingUp",
+            "title": "Digital Marketing Strategy",
+            "href": "/"
+          },
+          {
+            "icon": "IoPeopleOutline",
+            "title": "Social Media & Influencer Marketing",
+            "href": "/"
+          }
+        ]
+      },
+      {
+        "name": "Other",
+        "items": [
+          {
+            "title": "Partnerships",
+            "href": "/partnerships"
+          },
+          {
+            "title": "FAQs",
+            "href": "/faqs"
+          }
+        ]
+      }
+    ],
+    "bottom": {
+      "left": "Privacy Policy",
+      "right": "© Copyright Loops Design Studio 2025"
+    }
+  },
+  "FAQs": {
+    "title": "FAQs",
+    "questions": [
+      {
+        "question": "How much do your services cost?",
+        "answer": "Our pricing depends on the project scope, channels involved, and your business goals. Most of our clients invest between AUD 3,000 - 15,000 per month, but we focus on outcomes rather than fixed retainers. Every proposal is customised to deliver measurable growth."
+      },
+      {
+        "question": "How do you ensure measurable results?",
+        "answer": "We align every project with clear KPIs such as conversion rate, customer acquisition cost, and return on ad spend (ROAS). You'll receive real-time dashboards and weekly insights so you can see what's working and where we're optimizing."
+      },
+      {
+        "question": "What makes your performance-driven approach different?",
+        "answer": "Unlike traditional agencies that chase vanity metrics, we focus on business results. Through continuous A/B testing and creative iteration, we scale what performs and refine what doesn't — ensuring your budget drives actual revenue growth."
+      },
+      {
+        "question": "What kind of creative content do you produce?",
+        "answer": "Our creative team handles visual design, video production, photography, motion graphics, web design, and copywriting. Every asset is crafted to inspire engagement, conversion, and brand loyalty — not just look good."
+      },
+      {
+        "question": "Do you work with all business sizes?",
+        "answer": "Yes. From emerging startups to established enterprises, we adapt our process to your needs. We can integrate seamlessly with your internal marketing team or act as your fully outsourced creative partner."
+      },
+      {
+        "question": "Do I need to sign a long-term contract?",
+        "answer": "Not necessarily. We offer both short-term and long-term partnerships, depending on what best suits your needs and goals. Whether you start with a project-based collaboration or build an ongoing strategy, we're flexible. We believe the quality of our service naturally encourages clients to stay with us for the long term."
+      },
+      {
+        "question": "Which digital channels are right for my business?",
+        "answer": "That depends on your audience, goals, and positioning. We'll conduct a discovery session to evaluate your market, then recommend the ideal mix — from SEO and Google Ads to Meta, TikTok, email marketing, or influencer strategy."
+      },
+      {
+        "question": "How soon can I expect to see results?",
+        "answer": "Most clients notice early momentum within the first 3 months. The first month is dedicated to audit and strategy, the second to creative rollout and campaigns, and the third to scaling and optimization. Results compound over time."
+      },
+      {
+        "question": "Will I have visibility and control throughout the process?",
+        "answer": "Absolutely. You'll have access to live analytics, monthly reports, and direct communication with your project lead. Transparency is at the core of how we work — you'll always know what's happening and why."
+      },
+      {
+        "question": "What happens if results don't meet expectations?",
+        "answer": "We treat your KPIs as our own. If key targets fall short, we'll proactively review the strategy, reallocate budget, and adjust direction. Our goal is to be a true partner in growth, not just another vendor.how we work — you'll always know what's happening and why."
+      }
+    ]
+  },
+  "Partnerships_page": {
+    "title": "COLLABORATIONS & PARTNERSHIPS",
+    "logos": [
+      { "imageSrc": "/logos/clarins.webp", "label": "CLARINS" },
+      { "imageSrc": "/logos/EL.webp", "label": "ESTEE LAUDER" },
+      {
+        "imageSrc": "/logos/Jurlique.webp",
+        "label": "JURLIQUE"
+      },
+      {
+        "imageSrc": "/logos/lancome.webp",
+        "label": "LANCOME"
+      },
+      { "imageSrc": "/logos/loreal.webp", "label": "LOREAL" },
+      { "imageSrc": "/logos/NYX.webp", "label": "NYX" },
+      { "imageSrc": "/logos/ysl.webp", "label": "YSL" },
+      { "imageSrc": "/logos/granted.webp", "label": "GRANTED" },
+      { "imageSrc": "/logos/morimoon.webp", "label": "MORIMOON" }
+    ]
+  }
+}

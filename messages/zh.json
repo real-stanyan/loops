@@ -1,0 +1,323 @@
+{
+  "Header": {
+    "title": "LOOPS 设计工作室",
+    "navs": [
+      { "name": "主页", "href": "/" },
+      {
+        "name": "服务",
+        "items": [
+          {
+            "icon": "MdInsights",
+            "name": "品牌策略与市场洞察",
+            "href": "/"
+          },
+          {
+            "icon": "LuTableOfContents",
+            "name": "创意设计与内容制作",
+            "href": "/"
+          },
+          {
+            "icon": "IoShareSocial",
+            "name": "营销传播与媒介策略",
+            "href": "/"
+          },
+          {
+            "icon": "IoIosRocket",
+            "name": "品牌成长与长期咨询",
+            "href": "/"
+          }
+        ]
+      },
+      {
+        "name": "重点服务项目",
+        "items": [
+          {
+            "icon": "MdDesignServices",
+            "title": "创意与视觉设计",
+            "href": "/"
+          },
+          {
+            "icon": "MdTrendingUp",
+            "title": "数字营销策略",
+            "href": "/"
+          },
+          {
+            "icon": "IoPeopleOutline",
+            "title": "社交媒体与影响者营销",
+            "href": "/"
+          }
+        ]
+      },
+      { "name": "合作品牌", "href": "/partnerships" },
+      { "name": "常见问答", "href": "/faqs" }
+    ],
+    "function_button": "关闭"
+  },
+  "HomePage": {
+    "hero_texts": [
+      "平面/网页设计与搭建",
+      "内容创作",
+      "社交媒体管理",
+      "数字营销"
+    ]
+  },
+  "AboutUs": {
+    "title": "关于",
+    "sub_title": "我们",
+    "content": [
+      "在 Loops descign Studio，我们将策略、设计与科技融合，为品牌打造全方位的整合体验。从洞察到落地执行，我们与品牌携手，定义其独特的身份，塑造鲜明的形象，并以清晰、有力且富有情感的方式传达品牌价值。",
+      "从品牌策略到完整的数字化开发，我们提供兼具创意与成果导向的整体解决方案。通过深思熟虑的设计、简洁高效的代码，以及以用户为中心的策略思维，帮助品牌脱颖而出并实现持续增长。",
+      "我们的多领域团队涵盖 视觉设计、网站开发、内容创作、社交媒体 与 数字营销，以数据驱动和表现导向的方式，助力品牌在每一个触点提升体验与价值。"
+    ],
+    "highlights": ["策略引领", "设计驱动", "技术赋能", "增长导向"]
+  },
+  "BusinessCard": {
+    "card": [
+      {
+        "Icon": "MdInsights",
+        "title": "品牌策略与市场洞察",
+        "desc": "一切始于策略。我们帮助品牌厘清自身定位与受众价值，从市场研究到品牌愿景，让每个决策都有据可依。",
+        "href": "/"
+      },
+      {
+        "Icon": "LuTableOfContents",
+        "title": "创意设计与内容制作",
+        "desc": "我们用视觉语言与内容叙事，将策略转化为打动人心的体验。从品牌视觉到传播内容，每一处都传递独特个性。",
+        "href": "/"
+      },
+      {
+        "Icon": "IoShareSocial",
+        "title": "营销传播与媒介策略",
+        "desc": "我们通过整合传播与数字营销，帮助品牌与世界建立有效连接。每个触点都源于策略，每次曝光都追求真实影响。",
+        "href": "/"
+      },
+      {
+        "Icon": "IoIosRocket",
+        "title": "品牌成长与长期咨询",
+        "desc": "我们不仅打造品牌，更陪伴品牌成长。从策略顾问到内部赋能，让品牌在持续演化中保持一致与活力。",
+        "href": "/"
+      }
+    ],
+    "link_text": "了解更多"
+  },
+  "SignatureServices": {
+    "title": "重点服务项目",
+    "card": [
+      {
+        "icon": "MdDesignServices",
+        "title": "创意与视觉设计",
+        "content": "我们坚信强有力的视觉设计能塑造认知与情感。我们的创意团队将想法化为具有永恒魅力的视觉体验，从品牌识别到网站与包装，为品牌建立一致而动人的形象。",
+        "list": [
+          {
+            "title": "品牌视觉识别设计",
+            "content": "打造统一而有记忆点的品牌体系，让视觉成为品牌的语言。"
+          },
+          {
+            "title": "网站设计与开发",
+            "content": "以用户为中心，结合美感与功能性，呈现流畅的数字体验。"
+          },
+          {
+            "title": "包装设计",
+            "content": "以细节传递品质，让包装不仅保护产品，更讲述品牌故事。"
+          },
+          {
+            "title": "产品摄影",
+            "content": "以光影与构图捕捉产品特质，展现令人信服的视觉力量。"
+          }
+        ]
+      },
+      {
+        "icon": "MdTrendingUp",
+        "title": "数字营销策略",
+        "content": "我们让创意与成效紧密相连。通过系统化的营销策略与数据分析，帮助品牌在数字时代实现更快、更稳、更持久的增长。",
+        "list": [
+          {
+            "title": "SEO 优化策略",
+            "content": "提升品牌在搜索引擎的自然曝光，让目标受众主动找到你。"
+          },
+          {
+            "title": "Google 与 Meta 广告",
+            "content": "从创意概念到精准投放，最大化广告的触达率与投资回报。"
+          },
+          {
+            "title": "转化率优化（CRO）",
+            "content": "通过数据驱动的测试来提高转化率和平均订单价值。"
+          }
+        ]
+      },
+      {
+        "icon": "IoPeopleOutline",
+        "title": "社交媒体与影响者营销",
+        "content": "我们以故事为核心，构建品牌与受众的真实连接。通过策略、创意与合作，帮助品牌在社交平台中建立信任与长期影响力。",
+        "list": [
+          {
+            "title": "社交媒体营销",
+            "content": "策划并执行富有感染力的内容策略，增强互动与品牌社区归属感。"
+          },
+          {
+            "title": "影响者合作服务",
+            "content": "与契合品牌理念的创作者合作，打造真实、有共鸣的内容传播。"
+          },
+          {
+            "title": "内容创作",
+            "content": "从视觉到文案，创造具品牌特征的原创内容，唤起情感共鸣与行动。"
+          }
+        ]
+      }
+    ]
+  },
+  "Partnerships": {
+    "title": "合作品牌"
+  },
+  "Projects": {
+    "title": "我们的作品",
+    "content": "品牌、网站、内容，一切以结果为先。"
+  },
+  "ContactUs": {
+    "leftSide": {
+      "title": "联系我们",
+      "content": "我们期待与您联系，探讨如何以定制化营销策略助力您的品牌增长。"
+    },
+    "rightSide": {
+      "title": "获取免费报价",
+      "content": "解锁来自澳大利亚顶尖营销机构的免费增长方案",
+      "name": { "title": "姓名", "placeholder": "请输入您的姓名" },
+      "email": { "title": "邮箱", "placeholder": "请输入您的邮箱地址" },
+      "businessName": {
+        "title": "公司名称",
+        "placeholder": "请输入您的公司名称"
+      },
+      "message": {
+        "title": "留言",
+        "placeholder": "请输入您的留言"
+      }
+    },
+    "function_button": { "default": "提交", "loading": "提交中..." }
+  },
+  "Footer": {
+    "title": "LOOPS 设计工作室",
+    "navs": [
+      {
+        "name": "服务",
+        "items": [
+          {
+            "icon": "MdInsights",
+            "name": "品牌策略与市场洞察",
+            "href": "/"
+          },
+          {
+            "icon": "LuTableOfContents",
+            "name": "创意设计与内容制作",
+            "href": "/"
+          },
+          {
+            "icon": "IoShareSocial",
+            "name": "营销传播与媒介策略",
+            "href": "/"
+          },
+          {
+            "icon": "IoIosRocket",
+            "name": "品牌成长与长期咨询",
+            "href": "/"
+          }
+        ]
+      },
+      {
+        "name": "重点服务项目",
+        "items": [
+          {
+            "icon": "MdDesignServices",
+            "title": "创意与视觉设计",
+            "href": "/"
+          },
+          {
+            "icon": "MdTrendingUp",
+            "title": "数字营销策略",
+            "href": "/"
+          },
+          {
+            "icon": "IoPeopleOutline",
+            "title": "社交媒体与影响者营销",
+            "href": "/"
+          }
+        ]
+      },
+      {
+        "name": "其它",
+        "items": [
+          { "name": "合作品牌", "href": "/partnerships" },
+          { "name": "常见问答", "href": "/faqs" }
+        ]
+      }
+    ],
+    "bottom": {
+      "left": "隐私政策",
+      "right": "© Copyright LOOPS 设计工作室 2025"
+    }
+  },
+  "FAQs": {
+    "title": "常见问答",
+    "questions": [
+      {
+        "question": "你们的服务费用大概是多少？",
+        "answer": "我们的收费会根据项目规模、合作渠道及业务目标而定。大多数客户的月度投入在 3,000 至 15,000 澳元 之间。我们更注重结果导向，而非固定月费。每份方案都会根据客户需求量身定制，以实现可衡量的增长。"
+      },
+      {
+        "question": "你们如何保证项目成果可量化？",
+        "answer": "我们会为每个项目设定明确的 KPI，例如转化率、获客成本与广告回报率（ROAS）。客户可实时查看数据仪表板，并获得每周分析报告，清楚了解优化方向与成效。"
+      },
+      {
+        "question": "你们的绩效驱动模式与其他公司有何不同？",
+        "answer": "不同于传统机构只关注点击量或曝光量，我们专注于 真正的商业成果。通过持续的 A/B 测试与创意优化，我们将预算投入表现最佳的部分，确保每一分支出都能带来实际回报。"
+      },
+      {
+        "question": "你们能制作哪些类型的创意内容？",
+        "answer": "我们的创意团队负责 视觉设计、视频制作、摄影、动效设计、网站设计与文案撰写。每个作品都以激发互动与转化为核心，而不仅仅是视觉美观。"
+      },
+      {
+        "question": "你们是否只与大型企业合作？",
+        "answer": "不是。无论是初创品牌还是成熟企业，我们都能灵活适应。我们既可以融入您的内部营销团队，也可以作为独立的外部创意伙伴全程负责执行。"
+      },
+      {
+        "question": "是否需要签订长期合约？",
+        "answer": "不一定。我们提供 短期或长期合作，可根据客户需求灵活调整。无论是项目制合作，还是持续战略规划，我们都保持开放与灵活。我们相信，凭借高质量的服务，客户自然会选择与我们长期合作。"
+      },
+      {
+        "question": "我的企业适合使用哪些数字营销渠道？",
+        "answer": "这取决于您的目标受众、品牌定位及预算。我们会先进行市场评估，再为您推荐最合适的组合，例如 SEO、Google 广告、Meta、TikTok、电子邮件营销或网红策略 等。"
+      },
+      {
+        "question": "多久可以看到营销成效？",
+        "answer": "多数客户会在 前 3 个月内 看到明显成果。第一个月进行审计与策略制定，第二个月启动创意与广告投放，第三个月重点优化与放大成果。随着时间积累，效果会更加显著。"
+      },
+      {
+        "question": "客户是否能实时了解项目进展？",
+        "answer": "当然。您将获得实时数据访问权限、月度报告，并可直接与项目负责人沟通。我们秉持透明原则，确保客户始终清楚了解每个阶段的工作与成果。"
+      },
+      {
+        "question": "如果结果未达预期怎么办？",
+        "answer": "我们会把客户的 KPI 视为自己的目标。一旦发现结果偏离预期，我们会立即进行策略复盘、重新分配预算并调整方向。我们的宗旨是成为您 共同成长的长期伙伴，而不仅仅是外部供应商。"
+      }
+    ]
+  },
+  "Partnerships_page": {
+    "title": "合作品牌",
+    "logos": [
+      { "imageSrc": "/logos/clarins.webp", "label": "娇韵诗" },
+      { "imageSrc": "/logos/EL.webp", "label": "雅诗兰黛" },
+      {
+        "imageSrc": "/logos/Jurlique.webp",
+        "label": "茱莉蔻"
+      },
+      {
+        "imageSrc": "/logos/lancome.webp",
+        "label": "兰蔻"
+      },
+      { "imageSrc": "/logos/loreal.webp", "label": "欧莱雅" },
+      { "imageSrc": "/logos/NYX.webp", "label": "NYX" },
+      { "imageSrc": "/logos/ysl.webp", "label": "YSL" },
+      { "imageSrc": "/logos/granted.webp", "label": "GRANTED" },
+      { "imageSrc": "/logos/morimoon.webp", "label": "MORIMOON" }
+    ]
+  }
+}

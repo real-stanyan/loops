@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import React from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -10,6 +11,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutUs = () => {
+  const t = useTranslations("AboutUs");
   const FadeInYs = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(() => {
@@ -49,65 +51,29 @@ const AboutUs = () => {
             }}
           >
             <h2 className="font-black text-3xl sm:text-4xl tracking-tight uppercase">
-              About <span className="text-[var(--decoration)]">Us</span>
+              {t("title")}{" "}
+              <span className="text-[var(--decoration)]">{t("sub_title")}</span>
             </h2>
 
             <div className="space-y-4 text-base sm:text-lg text-white/90 tracking-wide">
-              <p>
-                At{" "}
-                <strong className="text-[var(--decoration)] font-black">
-                  Loops Design Studio
-                </strong>
-                , we merge strategy, design, and technology to craft holistic
-                brand experiences. From insight to execution, we partner with
-                brands to define their identity, shape their presence, and
-                communicate with clarity and purpose.
-              </p>
-              <p>
-                From brand strategy to full-scale digital development, we create
-                cohesive solutions that connect creativity with results —
-                blending thoughtful design, clean code, and user-centric
-                strategy to help brands stand out and grow with confidence.
-              </p>
-              <p>
-                Our multidisciplinary team covers{" "}
-                <strong className="text-[var(--decoration)] font-black">
-                  visual design
-                </strong>
-                ,{" "}
-                <strong className="text-[var(--decoration)] font-black">
-                  web development
-                </strong>
-                ,{" "}
-                <strong className="text-[var(--decoration)] font-black">
-                  content creation
-                </strong>
-                ,{" "}
-                <strong className="text-[var(--decoration)] font-black">
-                  social media
-                </strong>
-                , and{" "}
-                <strong className="text-[var(--decoration)] font-black">
-                  digital marketing
-                </strong>{" "}
-                — delivering data-driven, performance-focused outcomes that
-                elevate every touchpoint of a brand's journey.
-              </p>
+              <p>{t.raw("content")[0]}</p>
+              <p>{t.raw("content")[1]}</p>
+              <p>{t.raw("content")[2]}</p>
             </div>
 
             {/* Small highlights */}
             <ul className="mt-4 grid grid-cols-2 gap-3 text-sm text-white/80">
               <li className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur supports-[backdrop-filter]:bg-white/5">
-                Strategy-led
+                {t.raw("highlights")[0]}
               </li>
               <li className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
-                Design-driven
+                {t.raw("highlights")[1]}
               </li>
               <li className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
-                Technology-empowered
+                {t.raw("highlights")[2]}
               </li>
               <li className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
-                Growth-focused
+                {t.raw("highlights")[3]}
               </li>
             </ul>
           </div>

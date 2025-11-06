@@ -29,7 +29,7 @@ const Projects = () => {
                   src="/projects/fujisushi.webp"
                   alt="fujisushi"
                   fill
-                  className="object-fill"
+                  className="object-cover"
                 />
               </div>
             </Link>
@@ -48,7 +48,26 @@ const Projects = () => {
                   src="/projects/granted.webp"
                   alt="granted"
                   fill
-                  className="object-fill"
+                  className="object-cover"
+                />
+              </div>
+            </Link>
+          </Card>
+          <Card>
+            <Link href={"https://morimoon.com.au/"} target="_blank">
+              {/* title */}
+              <div className="relative z-10 flex items-center gap-2 p-2 border-b-2 border-white/20 bg-black/60">
+                <CodeXml size={20} />
+                <h1>www.morimoon.com.au</h1>
+              </div>
+
+              {/* image */}
+              <div className="relative aspect-video overflow-hidden w-full h-full">
+                <Image
+                  src="/projects/morimoon.webp"
+                  alt="morimoon"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </Link>

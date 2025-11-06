@@ -11,21 +11,23 @@ import React, {
   useMemo,
   useRef,
 } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { useTranslations } from "next-intl";
 
+/* ================== Types ================== */
 export interface CardSwapProps {
-  width?: number | string; // 默认 680
-  height?: number | string; // 默认 460
-  cardDistance?: number;
-  verticalDistance?: number;
-  delay?: number;
+  width?: number | string; // default 680
+  height?: number | string; // default 460
+  cardDistance?: number; // X spacing
+  verticalDistance?: number; // Y/Z spacing
+  delay?: number; // autoplay ms
   pauseOnHover?: boolean;
   onCardClick?: (idx: number) => void;
   skewAmount?: number;
   easing?: "linear" | "elastic";
   children: ReactNode;
-  leftTitle?: ReactNode;
-  leftText?: ReactNode;
+  leftTitle?: ReactNode; // override i18n default
+  leftText?: ReactNode; // override i18n default
   className?: string;
 }
 
@@ -33,6 +35,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   customClass?: string;
 }
 
+/* ================== Card ================== */
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ customClass, ...rest }, ref) => (
     <div
@@ -47,9 +50,8 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
 );
 Card.displayName = "Card";
 
-/** 修复：Ref 可空 */
+/* ================== Utils ================== */
 type CardRef = React.RefObject<HTMLDivElement | null>;
-
 interface Slot {
   x: number;
   y: number;
@@ -82,33 +84,41 @@ const placeNow = (el: HTMLElement, slot: Slot, skew: number) =>
     force3D: true,
   });
 
-const CardSwap: React.FC<CardSwapProps> = ({
-  width = 680,
-  height = 460,
-  cardDistance = 60,
-  verticalDistance = 70,
-  delay = 5000,
-  pauseOnHover = false,
-  onCardClick,
-  skewAmount = 6,
-  easing = "elastic",
-  children,
-  leftTitle = (
+/* ================== Main ================== */
+const CardSwap: React.FC<CardSwapProps> = (props) => {
+  const {
+    width = 680,
+    height = 460,
+    cardDistance = 60,
+    verticalDistance = 70,
+    delay = 5000,
+    pauseOnHover = false,
+    onCardClick,
+    skewAmount = 6,
+    easing = "elastic",
+    children,
+    leftTitle,
+    leftText,
+    className = "",
+  } = props;
+
+  // i18n 文案（HomePage.hero_texts）
+  const t = useTranslations("Projects");
+  const resolvedLeftTitle = leftTitle ?? (
     <span className="block text-2xl md:text-3xl xl:text-4xl font-semibold uppercase">
-      What we do
+      {t("title")}
     </span>
-  ),
-  leftText = (
+  );
+  const resolvedLeftText = leftText ?? (
     <span className="block text-base md:text-lg opacity-80">
-      Branding, Web, Content. Results, not buzzwords.
+      {t("content")}
     </span>
-  ),
-  className = "",
-}) => {
+  );
+
   const config =
     easing === "elastic"
       ? {
-          ease: "elastic.out(0.6, 0.9)",
+          ease: "elastic.out(0.6, 0.9)" as gsap.EaseString,
           durDrop: 2,
           durMove: 2,
           durReturn: 2,
@@ -116,7 +126,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
           returnDelay: 0.05,
         }
       : {
-          ease: "power1.inOut",
+          ease: "power1.inOut" as gsap.EaseString,
           durDrop: 0.8,
           durMove: 0.8,
           durReturn: 0.8,
@@ -129,7 +139,6 @@ const CardSwap: React.FC<CardSwapProps> = ({
     [children]
   );
 
-  /** 修复：Ref 数组为可空类型 */
   const refs = useMemo<CardRef[]>(
     () => childArr.map(() => React.createRef<HTMLDivElement>() as CardRef),
     [childArr.length]
@@ -138,13 +147,14 @@ const CardSwap: React.FC<CardSwapProps> = ({
   const order = useRef<number[]>(
     Array.from({ length: childArr.length }, (_, i) => i)
   );
-
   const tlRef = useRef<gsap.core.Timeline | null>(null);
   const intervalRef = useRef<number | null>(null);
   const container = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const total = refs.length;
+
+    // 初始定位
     refs.forEach((r, i) => {
       if (r.current) {
         placeNow(
@@ -163,12 +173,14 @@ const CardSwap: React.FC<CardSwapProps> = ({
       const tl = gsap.timeline();
       tlRef.current = tl;
 
+      // 顶卡下落
       tl.to(elFront, {
         y: "+=500",
         duration: config.durDrop,
         ease: config.ease,
       });
 
+      // 其余卡前移
       tl.addLabel("promote", `-=${config.durDrop * config.promoteOverlap}`);
       rest.forEach((idx, i) => {
         const el = refs[idx].current!;
@@ -187,6 +199,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
         );
       });
 
+      // 顶卡回队尾
       const backSlot = makeSlot(
         refs.length - 1,
         cardDistance,
@@ -218,12 +231,13 @@ const CardSwap: React.FC<CardSwapProps> = ({
       });
     };
 
-    // 初次与轮播
+    // 开始轮播
     swap();
     intervalRef.current = window.setInterval(swap, delay);
 
-    if (pauseOnHover) {
-      const node = container.current!;
+    // 悬停控制
+    if (pauseOnHover && container.current) {
+      const node = container.current;
       const pause = () => {
         tlRef.current?.pause();
         if (intervalRef.current !== null) {
@@ -233,11 +247,13 @@ const CardSwap: React.FC<CardSwapProps> = ({
       };
       const resume = () => {
         tlRef.current?.play();
-        intervalRef.current = window.setInterval(swap, delay);
+        if (intervalRef.current === null) {
+          intervalRef.current = window.setInterval(swap, delay);
+        }
       };
-      // 被动监听，避免潜在阻塞
       node.addEventListener("mouseenter", pause, { passive: true });
       node.addEventListener("mouseleave", resume, { passive: true });
+
       return () => {
         node.removeEventListener("mouseenter", pause);
         node.removeEventListener("mouseleave", resume);
@@ -286,15 +302,15 @@ const CardSwap: React.FC<CardSwapProps> = ({
         "max-w-7xl mx-auto px-4",
         className,
       ].join(" ")}
-      style={{ touchAction: "pan-y" }} // 允许页面垂直滚动
+      style={{ touchAction: "pan-y" }}
     >
-      {/* 左侧文案 */}
+      {/* 左侧文案（i18n 或外部覆盖） */}
       <div className="select-none">
-        {leftTitle}
-        <div className="mt-3">{leftText}</div>
+        {resolvedLeftTitle}
+        <div className="mt-3">{resolvedLeftText}</div>
       </div>
 
-      {/* 右侧更大的卡片栈（不拦截滚轮/触摸事件） */}
+      {/* 右侧卡片栈 */}
       <div
         className="
           relative justify-self-end

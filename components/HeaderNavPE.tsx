@@ -10,8 +10,25 @@ import React, {
 import { createPortal } from "react-dom";
 import { gsap } from "gsap";
 import { IoMdCloseCircle } from "react-icons/io";
+import { useTranslations } from "next-intl";
 
-// ====== Types ======
+/* ====== Icons: 将 JSON 里的字符串名 -> 真实组件 ====== */
+import { MdInsights, MdDesignServices, MdTrendingUp } from "react-icons/md";
+import { LuTableOfContents } from "react-icons/lu";
+import { IoShareSocial, IoPeopleOutline } from "react-icons/io5";
+import { IoIosRocket } from "react-icons/io";
+
+const ICONS = {
+  MdInsights,
+  LuTableOfContents,
+  IoShareSocial,
+  IoIosRocket,
+  MdDesignServices,
+  MdTrendingUp,
+  IoPeopleOutline,
+} as const;
+
+/* ====== Types ====== */
 type IconType = React.ComponentType<{ className?: string; size?: number }>;
 
 export type SimpleNav = {
@@ -30,7 +47,7 @@ export type NavEntry = SimpleNav | NavGroup;
 
 interface HeaderNavPEProps {
   position?: "left" | "right";
-  navs?: NavEntry[];
+  navs?: NavEntry[]; // 若不传，则从 i18n("Header.navs") 读取并规范化
   colors?: string[];
   menuButtonColor?: string;
   openMenuButtonColor?: string;
@@ -40,14 +57,50 @@ interface HeaderNavPEProps {
   lockScrollOnOpen?: boolean;
 }
 
+// i18n 原始结构（兼容 name/title 与 href/link）
+type RawLeaf = {
+  name?: string;
+  title?: string;
+  href?: string;
+  link?: string;
+  icon?: keyof typeof ICONS | string;
+  ariaLabel?: string;
+};
+type RawGroup = { name: string; items?: RawLeaf[] };
+type RawNav = RawLeaf | RawGroup;
+
 // type guard
 const isGroup = (e: NavEntry): e is NavGroup =>
   (e as NavGroup).groupName !== undefined;
 
-// ====== Component ======
+/* 将 i18n 的 JSON -> 组件可用的 NavEntry[]（保持你的样式与结构不变） */
+function normalizeFromI18n(raw: RawNav[] | undefined): NavEntry[] {
+  if (!raw) return [];
+  const toIcon = (key?: string): IconType | undefined =>
+    key ? (ICONS as Record<string, IconType>)[key] : undefined;
+
+  const toLeaf = (x: RawLeaf): SimpleNav => ({
+    name: x.name ?? x.title ?? "",
+    link: x.link ?? x.href ?? "#",
+    ariaLabel: x.ariaLabel,
+    icon: toIcon(x.icon),
+  });
+
+  return raw.map((n) => {
+    if ("items" in n && Array.isArray(n.items)) {
+      return {
+        groupName: n.name,
+        items: n.items.map(toLeaf),
+      } as NavGroup;
+    }
+    return toLeaf(n as RawLeaf);
+  });
+}
+
+/* ====== Component（保留你的样式与动画不变） ====== */
 const HeaderNavPE: React.FC<HeaderNavPEProps> = ({
   position = "right",
-  navs = [],
+  navs,
   colors = ["#ff6b3580", "#ff6b35"],
   menuButtonColor = "#f5f5f7",
   openMenuButtonColor = "#1d1d1f",
@@ -56,6 +109,13 @@ const HeaderNavPE: React.FC<HeaderNavPEProps> = ({
   className,
   lockScrollOnOpen = true,
 }) => {
+  const t = useTranslations("Header");
+  // 如果外部没传 navs，则从 i18n 取并规范化
+  const navsResolved: NavEntry[] =
+    (navs && navs.length > 0
+      ? navs
+      : normalizeFromI18n(t.raw("navs") as RawNav[])) ?? [];
+
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
@@ -238,7 +298,7 @@ const HeaderNavPE: React.FC<HeaderNavPEProps> = ({
     textCycleAnimRef.current?.kill();
 
     const currentLabel = opening ? "Menu" : "Close";
-    theLabelCycle: {
+    {
       const targetLabel = opening ? "Close" : "Menu";
       const cycles = 3;
       const seq: string[] = [currentLabel];
@@ -308,14 +368,17 @@ const HeaderNavPE: React.FC<HeaderNavPEProps> = ({
       className={`sm-scope relative z-40 ${className || ""} lg:hidden`}
       data-position={position}
     >
-      {/* Toggle（仅文字） */}
+      {/* Toggle（文字）—— 保持原样式 */}
       <button
         ref={toggleBtnRef}
         type="button"
         onClick={toggleMenu}
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
-        className="sm-toggle flex items-center bg-transparent border-0 cursor-pointer font-medium leading-none"
+        className={`
+          sm-toggle flex items-center bg-transparent border-0 
+          cursor-pointer font-medium leading-none
+          `}
       >
         <span className="inline-block h-[1em] overflow-hidden whitespace-nowrap">
           <span ref={textInnerRef} className="flex flex-col leading-none">
@@ -393,12 +456,12 @@ const HeaderNavPE: React.FC<HeaderNavPEProps> = ({
                 className="absolute top-4 right-4 text-[#1d1d1f]/70 hover:text-[#1d1d1f] focus-visible:outline text-xl
                   focus-visible:outline-offset-2 focus-visible:outline-black/40 flex justify-center items-center gap-1"
               >
-                Close <IoMdCloseCircle size={28} />
+                {t("function_button")} <IoMdCloseCircle size={28} />
               </button>
 
-              {/* Nav rendering */}
+              {/* Nav rendering（保持你的样式与结构不变） */}
               <nav className="flex flex-col gap-6">
-                {navs.map((entry, idx) =>
+                {navsResolved.map((entry, idx) =>
                   isGroup(entry) ? (
                     <section key={`g-${idx}`} className="flex flex-col gap-3">
                       <div className="m-0 text-base font-semibold uppercase tracking-wide bg-[#1d1d1f] text-[#f5f5f7] rounded p-2">
@@ -423,8 +486,8 @@ const HeaderNavPE: React.FC<HeaderNavPEProps> = ({
                                 )}
                                 <span
                                   className={`
-                                sm-panel-itemLabel inline-block will-change-transform [transform-origin:50%_100%] text-base font-semibold uppercase 
-                                 text-[#1d1d1f] group-hover:text-[var(--sm-accent,#ff6b35)]
+                                    sm-panel-itemLabel inline-block will-change-transform [transform-origin:50%_100%] text-base font-semibold uppercase 
+                                    text-[#1d1d1f] group-hover:text-[var(--sm-accent,#ff6b35)]
                                   `}
                                 >
                                   {it.name}
@@ -454,8 +517,8 @@ const HeaderNavPE: React.FC<HeaderNavPEProps> = ({
                         )}
                         <span
                           className={`
-                        sm-panel-itemLabel inline-block will-change-transform [transform-origin:50%_100%] text-base font-semibold uppercase tracking-[-0.025em]
-                         text-[#1d1d1f] group-hover:text-[var(--sm-accent,#ff6b35)]
+                            sm-panel-itemLabel inline-block will-change-transform [transform-origin:50%_100%] text-base font-semibold uppercase tracking-[-0.025em]
+                            text-[#1d1d1f] group-hover:text-[var(--sm-accent,#ff6b35)]
                           `}
                         >
                           {(entry as SimpleNav).name}

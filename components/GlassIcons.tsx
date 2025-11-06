@@ -15,9 +15,8 @@ export interface GlassIconsProps {
 const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
   return (
     <div
-      className={`px-4 md:px-40 pt-30 grid gap-10 sm:gap-12 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto py-12 space-y-20 ${
-        className || ""
-      }`}
+      className={`px-4 md:px-40 py-30 grid gap-10 sm:gap-12 grid-cols-2 md:grid-cols-3 
+        lg:grid-cols-4 mx-auto py-12 space-y-20 ${className || ""}`}
     >
       {items.map((item, i) => (
         <button

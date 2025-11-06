@@ -1,65 +1,38 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+import { useTranslations } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
+
+import {
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 import HeaderNavPC from "./HeaderNavPC";
 import HeaderNavPE from "./HeaderNavPE";
 
-import { IoHomeSharp } from "react-icons/io5";
-import { MdInsights } from "react-icons/md";
-import { LuTableOfContents } from "react-icons/lu";
-import { FaQuestionCircle } from "react-icons/fa";
-import { IoShareSocial } from "react-icons/io5";
-import { IoIosRocket } from "react-icons/io";
-import { FaPeopleGroup } from "react-icons/fa6";
-import { MdDesignServices, MdTrendingUp } from "react-icons/md";
-import { IoPeopleOutline } from "react-icons/io5";
-
-const navs = [
-  { icon: IoHomeSharp, name: "Home", link: "/" },
-  { icon: FaPeopleGroup, name: "Partnerships", link: "/partnerships" },
-  { icon: FaQuestionCircle, name: "FAQs", link: "/faqs" },
-  {
-    groupName: "Service",
-    items: [
-      { icon: MdInsights, name: "Brand Strategy & Market Insights", link: "/" },
-      {
-        icon: LuTableOfContents,
-        name: "Creative Direction & Content Production",
-        link: "/",
-      },
-      {
-        icon: IoShareSocial,
-        name: "Marketing, Media & Communications",
-        link: "/",
-      },
-      { icon: IoIosRocket, name: "Digital Marketing Strategy", link: "/" },
-    ],
-  },
-  {
-    groupName: "Signature Service",
-    items: [
-      { icon: MdDesignServices, name: "Creative & Visual Design", link: "/" },
-      { icon: MdTrendingUp, name: "Digital Marketing Strategy", link: "/" },
-      {
-        icon: IoPeopleOutline,
-        name: "Social Media & Influencer Marketing",
-        link: "/",
-      },
-    ],
-  },
-];
-
-import Link from "next/link";
-
-const Header: React.FC = () => {
+export default function Header() {
+  const t = useTranslations("Header");
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const locale = useLocale();
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  function onLocaleChange(next: string) {
+    // 切到相同路径的另一语言
+    router.replace(pathname, { locale: next });
+  }
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 flex justify-center pt-5 xl:pt-10 px-4">
@@ -85,27 +58,35 @@ const Header: React.FC = () => {
               draggable={false}
             />
           </div>
-
-          <span className=" font-semibold text-white/90">
-            LOOPS DESIGN STUDIO
-          </span>
+          <span className="font-semibold text-white/90">{t("title")}</span>
         </Link>
-        <HeaderNavPC />
-        <div className="absolute right-6 top-6">
-          <HeaderNavPE
-            navs={navs}
-            position="right"
-            colors={["#ff6b3580", "#ff6b35"]}
-            menuButtonColor="#f5f5f7"
-            openMenuButtonColor="#1d1d1f"
-            accentColor="#ff6b35"
-            changeMenuColorOnOpen
-            lockScrollOnOpen
-          />
+
+        <div className="flex items-center gap-2">
+          <NativeSelect
+            value={locale}
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+              onLocaleChange(e.target.value)
+            }
+            aria-label="Language"
+          >
+            <NativeSelectOption value="en">EN</NativeSelectOption>
+            <NativeSelectOption value="zh">ZH</NativeSelectOption>
+          </NativeSelect>
+
+          <HeaderNavPC />
+          <div className="border border-white/20 rounded-md px-3 py-2 bg-input/30 lg:hidden">
+            <HeaderNavPE
+              position="right"
+              colors={["#ff6b3580", "#ff6b35"]}
+              menuButtonColor="#f5f5f7"
+              openMenuButtonColor="#1d1d1f"
+              accentColor="#ff6b35"
+              changeMenuColorOnOpen
+              lockScrollOnOpen
+            />
+          </div>
         </div>
       </div>
     </header>
   );
-};
-
-export default Header;
+}

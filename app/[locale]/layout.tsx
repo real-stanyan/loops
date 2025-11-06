@@ -6,6 +6,15 @@ import { Toaster } from "@/components/ui/sonner";
 import Script from "next/script";
 import "./globals.css";
 import { Roboto } from "next/font/google";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { setRequestLocale } from "next-intl/server";
+
+type Props = {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+};
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -29,11 +38,12 @@ export const metadata: Metadata = {
   description: "A Company Focus on Graphic/Web Design and Building",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+  setRequestLocale(locale);
   return (
     <html lang="en">
       <head>
@@ -53,10 +63,12 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
-        <Toaster />
+        <NextIntlClientProvider>
+          <Header />
+          {children}
+          <Footer />
+          <Toaster />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
