@@ -106,7 +106,7 @@ export default async function Footer() {
         <div className="flex flex-1 justify-evenly gap-4 w-full">
           {renderGroup(services, true)}
           {renderGroup(signature, true)}
-          {renderGroup(others, false)}
+          <div className="hidden md:block">{renderGroup(others, false)}</div>
         </div>
       </div>
 
