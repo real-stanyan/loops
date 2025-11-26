@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import LogoLoop from "./LogoLoop";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
 const imageLogos = [
   {
@@ -50,13 +52,10 @@ const imageLogos = [
   },
 ];
 
-const Logos = async () => {
-  const t = await getTranslations("Partnerships");
+const Logos = () => {
+  const t = useTranslations("Partnerships");
   return (
-    <div className="h-[200px] relative overflow-hidden my-[100px]">
-      <h3 className="uppercase text-center font-black text-xl md:text-2xl xl:text-3xl mb-6">
-        {t("title")}
-      </h3>
+    <div className="relative overflow-hidden bg-black self-center">
       <LogoLoop
         logos={imageLogos}
         speed={120}

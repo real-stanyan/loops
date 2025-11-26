@@ -1,65 +1,43 @@
 {
   "Header": {
-    "title": "LOOPS DESIGN STUDIO",
     "navs": [
-      { "name": "Home", "href": "/" },
-      {
-        "name": "Services",
-        "items": [
-          {
-            "icon": "MdInsights",
-            "name": "Brand Strategy & Market Insights",
-            "href": "/"
-          },
-          {
-            "icon": "LuTableOfContents",
-            "name": "Creative Direction & Content Production",
-            "href": "/"
-          },
-          {
-            "icon": "IoShareSocial",
-            "name": "Marketing, Media & Communications",
-            "href": "/"
-          },
-          {
-            "icon": "IoIosRocket",
-            "name": "Brand Growth & Consulting",
-            "href": "/"
-          }
-        ]
-      },
-      {
-        "name": "Signature Services",
-        "items": [
-          {
-            "icon": "MdDesignServices",
-            "title": "Creative & Visual Design",
-            "href": "/"
-          },
-          {
-            "icon": "MdTrendingUp",
-            "title": "Digital Marketing Strategy",
-            "href": "/"
-          },
-          {
-            "icon": "IoPeopleOutline",
-            "title": "Social Media & Influencer Marketing",
-            "href": "/"
-          }
-        ]
-      },
-      { "name": "Partnerships", "href": "/partnerships" },
-      { "name": "FAQs", "href": "/faqs" }
-    ],
-    "function_button": "Close"
-  },
-  "HomePage": {
-    "hero_texts": [
-      "GRAPHIC/WEB DESIGN AND BUILDING",
-      "CONTENT CREATION",
-      "SOCIAL MEDIA MANAGEMENT",
-      "DIGITAL MARKETING"
+      { "title": "Projects", "href": "/" },
+      { "title": "Capabilities", "href": "/" },
+      { "title": "Studio", "href": "/" },
+      { "title": "Contact", "href": "/" }
     ]
+  },
+  "Hero": {
+    "hero_texts_line_1": "LOOPS",
+    "hero_texts_line_2": "DESIGN",
+    "hero_texts_line_3": "STUDIO",
+    "description": "We build brands, design experiences, and craft visual systems that help businesses grow with clarity and intention. Based in Sydney, we bring strategy, creativity, and execution together to deliver cohesive, thoughtful and lasting design across branding, packaging, websites, and content."
+  },
+  "Homepage": {
+    "branding_art_direction": {
+      "title_line_1": "BRANDING",
+      "title_line_2": "ART DIRECTION",
+      "content_line_1": "We define brand aesthetics through considered design and clear visual direction. From identity to imagery,",
+      "content_line_2": "we craft cohesive systems that give your brand a distinct presence across every medium."
+    },
+    "packaging_design": {
+      "title_line_1": "PACKAGING",
+      "title_line_2": "DESIGN",
+      "content": "We create packaging systems that balance aesthetics with function. From labels to boxes, we design structures, layouts and tactile experiences that elevate your product and strengthen your brand presence across every touchpoint.",
+      "labels": "Label & Box Design / Dielines & Print-Ready Artwork / Product Line Architecture / Material & Finishing Consultation / In-house Print Production"
+    },
+    "digital_experience": {
+      "title_line_1": "DIGITAL",
+      "title_line_2": "EXPERIENCE",
+      "content": "We design modern, intuitive and conversion-focused digital experiences. From interface design to full website builds, we create clean, functional and visually cohesive online environments that elevate your brand and guide your audience with clarity.",
+      "labels": "UI/UX Design / Webflow & Shopify Development E-commerce Setup / Landing Page Design Responsive Design Systems"
+    },
+    "influencer_marketing": {
+      "title_line_1": "INFLUENCER",
+      "title_line_2": "MARKETING",
+      "content": "We connect brands with creators who embody their identity. Through carefully curated partnerships, UGC content, and social-first storytelling, we help you reach audiences authentically and build meaningful brand engagement across every platform.",
+      "labels": "Creator Sourcing & Outreach / UGC Content Production Influencer Campaign Management Seeding Strategy & Gifting Programs Paid Collaboration Negotiation Content Usage for Ads (Meta, TikTok, Pinterest)"
+    }
   },
   "AboutUs": {
     "title": "ABOUT",
@@ -200,7 +178,9 @@
     "function_button": { "default": "Submit", "loading": "Submitting..." }
   },
   "Footer": {
-    "title": "LOOPS DESIGN STUDIO",
+    "title_line_1": "LOOPS",
+    "title_line_2": "DESIGN",
+    "title_line_3": "STUDIO",
     "navs": [
       {
         "name": "Services",

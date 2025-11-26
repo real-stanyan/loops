@@ -55,7 +55,7 @@ body {
   --radius: 0.625rem;
 
   /* 直接使用原 .dark 的值 */
-  --background: oklch(0.145 0 0);
+  --background: #f5f5f7;
   --foreground: oklch(0.985 0 0);
   --decoration: #ff6b35;
   --card: oklch(0.205 0 0);

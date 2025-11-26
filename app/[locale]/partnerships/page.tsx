@@ -1,5 +1,4 @@
 import React from "react";
-import GlassIcons from "@/components/GlassIcons";
 import { getTranslations } from "next-intl/server";
 
 const page = async () => {
@@ -10,7 +9,6 @@ const page = async () => {
       <h1 className="text-center uppercase text-4xl font-black ">
         {t("title")}
       </h1>
-      <GlassIcons items={t.raw("logos")} />
     </div>
   );
 };

@@ -1,65 +1,43 @@
 {
   "Header": {
-    "title": "LOOPS 设计工作室",
     "navs": [
-      { "name": "主页", "href": "/" },
-      {
-        "name": "服务",
-        "items": [
-          {
-            "icon": "MdInsights",
-            "name": "品牌策略与市场洞察",
-            "href": "/"
-          },
-          {
-            "icon": "LuTableOfContents",
-            "name": "创意设计与内容制作",
-            "href": "/"
-          },
-          {
-            "icon": "IoShareSocial",
-            "name": "营销传播与媒介策略",
-            "href": "/"
-          },
-          {
-            "icon": "IoIosRocket",
-            "name": "品牌成长与长期咨询",
-            "href": "/"
-          }
-        ]
-      },
-      {
-        "name": "重点服务项目",
-        "items": [
-          {
-            "icon": "MdDesignServices",
-            "title": "创意与视觉设计",
-            "href": "/"
-          },
-          {
-            "icon": "MdTrendingUp",
-            "title": "数字营销策略",
-            "href": "/"
-          },
-          {
-            "icon": "IoPeopleOutline",
-            "title": "社交媒体与影响者营销",
-            "href": "/"
-          }
-        ]
-      },
-      { "name": "合作品牌", "href": "/partnerships" },
-      { "name": "常见问答", "href": "/faqs" }
-    ],
-    "function_button": "关闭"
-  },
-  "HomePage": {
-    "hero_texts": [
-      "平面/网页设计与搭建",
-      "内容创作",
-      "社交媒体管理",
-      "数字营销"
+      { "title": "项目", "href": "/" },
+      { "title": "业务", "href": "/" },
+      { "title": "工作室", "href": "/" },
+      { "title": "联系我们", "href": "/" }
     ]
+  },
+  "Hero": {
+    "hero_texts_line_1": "LOOPS",
+    "hero_texts_line_2": "设计",
+    "hero_texts_line_3": "工作室",
+    "description": "我们打造品牌、设计体验并构建视觉系统，帮助企业清晰且有目的地发展。我们立足于悉尼，将策略、创意与执行力相结合，在品牌塑造、包装、网站及内容创作领域，提供连贯、深思熟虑且持久的设计方案。"
+  },
+  "Homepage": {
+    "branding_art_direction": {
+      "title_line_1": "品牌",
+      "title_line_2": "艺术指导",
+      "content_line_1": "我们通过深思熟虑的设计和清晰的视觉方向来定义品牌美学。从品牌识别到视觉意象，",
+      "content_line_2": "我们构建连贯的系统，赋予您的品牌在各种媒介上独特的风采。"
+    },
+    "packaging_design": {
+      "title_line_1": "包装",
+      "title_line_2": "设计",
+      "content": "我们致力于创造兼顾美学与功能的包装系统。从标签到包装盒，通过设计结构、排版和触感体验，我们不仅提升您的产品质感，更在每一个接触点增强您的品牌影响力。",
+      "labels": "标签与包装盒设计 / 刀模图与印刷完稿制作 / 产品线架构规划 / 材质与工艺咨询 / 内部印刷生产"
+    },
+    "digital_experience": {
+      "title_line_1": "数字",
+      "title_line_2": "体验",
+      "content": "我们设计现代、直观且注重转化率的数字体验。从界面设计到全站开发，我们打造简洁、实用且视觉连贯的在线环境，旨在提升您的品牌形象并清晰地引导您的受众。",
+      "labels": "UI/UX 设计（用户界面与体验） / Webflow 与 Shopify 开发 / 电子商务搭建 / 落地页设计 / 响应式设计系统"
+    },
+    "influencer_marketing": {
+      "title_line_1": "网红",
+      "title_line_2": "营销",
+      "content": "我们将品牌与能够体现其特质的创作者紧密相连。通过精心策划的合作伙伴关系、用户生成内容 (UGC) 以及社交优先的叙事策略，我们助您真实地触达受众，并在全平台建立深具意义的品牌互动。",
+      "labels": "创作者寻源与外联 / UGC（用户生成内容）制作 网红营销活动管理 种草策略与赠品计划 付费合作谈判 广告内容授权与使用 (Meta, TikTok, Pinterest)"
+    }
   },
   "AboutUs": {
     "title": "关于",
@@ -195,7 +173,9 @@
     "function_button": { "default": "提交", "loading": "提交中..." }
   },
   "Footer": {
-    "title": "LOOPS 设计工作室",
+    "title_line_1": "LOOPS",
+    "title_line_2": "设计",
+    "title_line_3": "工作室",
     "navs": [
       {
         "name": "服务",

@@ -339,7 +339,8 @@ export const LogoLoop = React.memo<LogoLoopProps>(
               "inline-flex items-center no-underline rounded",
               "transition-opacity duration-200 ease-linear",
               "hover:opacity-80",
-              "focus-visible:outline focus-visible:outline-current focus-visible:outline-offset-2"
+              "focus-visible:outline focus-visible:outline-current focus-visible:outline-offset-2",
+              "w-20 lg:w-25"
             )}
             href={(item as any).href}
             aria-label={itemAriaLabel || "logo link"}
