@@ -76,9 +76,8 @@ const Hero = () => {
         {/* 标题: 响应式字体大小和行高 */}
         <div
           className="flex flex-col font-black 
-          text-5xl leading-tight
-          sm:text-7xl sm:leading-tight
-          lg:text-9xl lg:leading-[0.75]" // 假设 leading-25 是自定义配置，这里用 standard leading 替代以保证安全
+          text-8xl leading-[0.75]
+          lg:text-9xl" // 假设 leading-25 是自定义配置，这里用 standard leading 替代以保证安全
         >
           <h3>{t("hero_texts_line_1")}</h3>
           <h3>{t("hero_texts_line_2")}</h3>
