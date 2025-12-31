@@ -38,7 +38,7 @@ export default function Header() {
       <div className="flex-1 overflow-hidden">
         {/* 3. h1 标签：应用动画 */}
         <h1
-          className="whitespace-nowrap text-center text-[12px] md:text-lg"
+          className="whitespace-nowrap text-center font-normal text-base sm:text-lg md:max-w-md"
           style={{
             // 15s 是滚动时间，linear 是匀速，infinite 是无限循环
             animation: "marquee 15s linear infinite",
