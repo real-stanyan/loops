@@ -39,13 +39,16 @@ export default function Header() {
       md:text-lg bg-[#f5f5f7] text-[#1d1d1f]
     `}
     >
-      <div className="w-[90%] flex items-center justify-between mx-auto">
+      <h1 className="flex-1 text-center text-[12px] md:text-lg whitespace-nowrap">
+        {t("title")}
+      </h1>
+      {/* <div className="w-[90%] flex items-center justify-between mx-auto">
         {t.raw("navs").map((nav: NavItem, index: number) => (
           <Link href={nav.href} key={index}>
             {nav.title}
           </Link>
         ))}
-      </div>
+      </div> */}
 
       <NativeSelect
         value={locale}
